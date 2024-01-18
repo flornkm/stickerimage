@@ -8,49 +8,63 @@ import Laptop from "@/illustrations/Laptop"
 
 export default function StickerPlacer() {
   const [draggedSticker, setDraggedSticker] = useState<number | null>(null)
-  const [lastPosition, setLastPosition] = useState<{ x: number; y: number }>({
-    x: 0,
-    y: 0,
-  })
+  const [dragPosition, setDragPosition] = useState<Record<string, number>[]>(
+    stickers.map(() => ({ x: 0, y: 0 }))
+  )
   const laptopRef = useRef<HTMLDivElement>(null)
 
   const handleDragStart = (
     e: DraggableEvent,
-    data: DraggableData,
     index: SetStateAction<number | null>
   ) => {
     setDraggedSticker(index)
-    setLastPosition({ x: data.x, y: data.y })
   }
 
-  const handleDragStop = (
-    e: DraggableEvent,
-    data: { x: number; y: number }
-  ) => {
+  const handleDragStop = (e: DraggableEvent, data: DraggableData) => {
     const laptop = laptopRef.current?.getBoundingClientRect()
     if (laptop) {
-      const stickerRef = e.target as HTMLElement
-
-      if (stickerRef) {
-        const stickerRect = stickerRef.getBoundingClientRect()
-
+      if (data.node instanceof HTMLElement) {
+        const stickerRect = data.node.getBoundingClientRect()
         if (
           stickerRect.left >= laptop.left &&
           stickerRect.right <= laptop.right &&
           stickerRect.top >= laptop.top &&
           stickerRect.bottom <= laptop.bottom
         ) {
-          setDraggedSticker(null)
+          setDragPosition((prev) => {
+            const next = [...prev]
+            next[draggedSticker as number] = {
+              x: data.x,
+              y: data.y,
+            }
+            return next
+          })
         } else {
-          // The sticker is outside the laptop. Reset its position.
+          setDragPosition((prev) => {
+            const next = [...prev]
+            next[draggedSticker as number] = {
+              x: data.x,
+              y: data.y,
+            }
+            return next
+          })
 
-          if (lastPosition) {
-            setDraggedSticker(null)
-            // Reset the transformation matrix to the identity matrix.
-            stickerRef.style.transform = "matrix(1, 0, 0, 1, 0, 0)"
-          }
+          data.node.style.opacity = "0"
+
+          setTimeout(() => {
+            setDragPosition((prev) => {
+              const next = [...prev]
+              next[draggedSticker as number] = {
+                x: 0,
+                y: 0,
+              }
+              return next
+            })
+            data.node.style.opacity = "1"
+          }, 500)
         }
       }
+      setDraggedSticker(null)
     }
   }
 
@@ -65,6 +79,10 @@ export default function StickerPlacer() {
           <div className="relative z-20 flex xs:justify-between flex-wrap gap-4 bg-zinc-100 rounded-lg p-2 mb-2">
             {stickers.map((sticker, index) => (
               <Draggable
+                position={{
+                  x: dragPosition[index]?.x || 0,
+                  y: dragPosition[index]?.y || 0,
+                }}
                 key={index}
                 onStart={(e) => handleDragStart(e, index)}
                 onStop={handleDragStop}
@@ -72,9 +90,14 @@ export default function StickerPlacer() {
               >
                 <div
                   className={
-                    "flex items-center justify-center w-14 flex-shrink-0 aspect-square rounded-md relative " +
+                    "flex items-center justify-center transition-opacity w-14 flex-shrink-0 aspect-square rounded-md relative " +
                     (draggedSticker !== null && draggedSticker !== index
                       ? "opacity-50 "
+                      : "") +
+                    (dragPosition[index]?.x === 0 &&
+                    dragPosition[index]?.y === 0 &&
+                    draggedSticker !== index
+                      ? "hover:bg-zinc-200"
                       : "")
                   }
                 >
