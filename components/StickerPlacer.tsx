@@ -3,14 +3,14 @@
 import { SetStateAction, useEffect, useRef, useState } from "react"
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable"
 import stickers from "@/public/sticker.json"
-import { Plus, Save, Smiley } from "@/components/Icons"
+import { Plus, RotateRight, RotateLeft, Save, Smiley } from "@/components/Icons"
 import Laptop from "@/illustrations/Laptop"
 import * as rive from "@rive-app/canvas"
 
 export default function StickerPlacer() {
   const [draggedSticker, setDraggedSticker] = useState<number | null>(null)
   const [dragPosition, setDragPosition] = useState<Record<string, number>[]>(
-    stickers.map(() => ({ x: 0, y: 0 }))
+    stickers.map(() => ({ x: 0, y: 0, rotation: 0, zIndex: 0 }))
   )
   const laptopRef = useRef<HTMLDivElement>(null)
   const dissolveAnimation = useRef<HTMLCanvasElement>(null)
@@ -20,6 +20,14 @@ export default function StickerPlacer() {
     index: SetStateAction<number | null>
   ) => {
     setDraggedSticker(index)
+    setDragPosition((prev) => {
+      const next = [...prev]
+      next[index as number] = {
+        ...next[index as number],
+        zIndex: Math.max(...next.map((sticker) => sticker.zIndex)) + 1,
+      }
+      return next
+    })
   }
 
   const handleDragStop = (e: DraggableEvent, data: DraggableData) => {
@@ -38,6 +46,8 @@ export default function StickerPlacer() {
             next[draggedSticker as number] = {
               x: data.x,
               y: data.y,
+              rotation: next[draggedSticker as number].rotation,
+              zIndex: next[draggedSticker as number].zIndex,
             }
             return next
           })
@@ -47,6 +57,7 @@ export default function StickerPlacer() {
             next[draggedSticker as number] = {
               x: data.x,
               y: data.y,
+              rotation: next[draggedSticker as number].rotation,
             }
             return next
           })
@@ -57,7 +68,7 @@ export default function StickerPlacer() {
           dissolveAnimation.current!.style.left = stickerRect.left + "px"
           dissolveAnimation.current!.style.top = stickerRect.top + "px"
 
-          const dissolve = new rive.Rive({
+          new rive.Rive({
             src: "/dissolve.riv",
             canvas: dissolveAnimation.current as HTMLCanvasElement,
             autoplay: true,
@@ -69,6 +80,7 @@ export default function StickerPlacer() {
               next[draggedSticker as number] = {
                 x: 0,
                 y: 0,
+                rotation: 0,
               }
               return next
             })
@@ -109,11 +121,11 @@ export default function StickerPlacer() {
                 disabled={draggedSticker !== null && draggedSticker !== index}
               >
                 <div
+                  style={{
+                    zIndex: dragPosition[index]?.zIndex || 0,
+                  }}
                   className={
-                    "flex items-center justify-center transition-opacity w-14 flex-shrink-0 aspect-square rounded-md relative " +
-                    (draggedSticker !== null && draggedSticker !== index
-                      ? "opacity-50 "
-                      : "") +
+                    "flex items-center justify-center transition-opacity w-14 flex-shrink-0 aspect-square rounded-md relative group " +
                     (dragPosition[index]?.x === 0 &&
                     dragPosition[index]?.y === 0 &&
                     draggedSticker !== index
@@ -122,16 +134,56 @@ export default function StickerPlacer() {
                   }
                 >
                   <div
-                    className="cursor-grab active:cursor-grabbing"
+                    className={
+                      "tooltip absolute bg-black text-white z-40 -top-8 flex gap-0.5 p-0.5 rounded-md transition-opacity md:opacity-0 " +
+                      (dragPosition[index]?.x === 0 &&
+                      dragPosition[index]?.y === 0
+                        ? "pointer-events-none opacity-0"
+                        : "md:group-hover:opacity-100")
+                    }
+                  >
+                    <div className="w-4 bg-black rotate-45 aspect-square rounded-sm absolute left-1/2 -translate-x-1/2 -bottom-1" />
+                    <button
+                      onClick={() => {
+                        setDragPosition((prev) => {
+                          const next = [...prev]
+                          next[index] = {
+                            ...next[index],
+                            rotation: next[index].rotation + 22.5,
+                          }
+                          return next
+                        })
+                      }}
+                      className="w-7 aspect-square relative z-50 flex items-center justify-center transition-colors hover:bg-zinc-800 rounded-[4px]"
+                    >
+                      <RotateRight size={20} />
+                    </button>
+                    <button
+                      onClick={() => {
+                        setDragPosition((prev) => {
+                          const next = [...prev]
+                          next[index] = {
+                            ...next[index],
+                            rotation: next[index].rotation - 22.5,
+                          }
+                          return next
+                        })
+                      }}
+                      className="w-7 aspect-square relative z-50 flex items-center justify-center transition-colors hover:bg-zinc-800 rounded-[4px]"
+                    >
+                      <RotateLeft size={20} />
+                    </button>
+                  </div>
+                  <div
+                    className="cursor-grab active:cursor-grabbing transition-all"
+                    style={{
+                      zIndex: 1,
+                      transform: `rotate(${dragPosition[index]?.rotation}deg)`,
+                    }}
                     dangerouslySetInnerHTML={{
                       __html: sticker.data
                         .replace(/width="\d+"/g, 'width="100%"')
-                        .replace(/height="\d+"/g, 'height="100%"')
-                        // .replace(
-                        //   /<svg/,
-                        //   '<svg stroke="#fff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"'
-                        // )
-                        .replace(/clip-path="url\([^"]+\)"/g, ""),
+                        .replace(/height="\d+"/g, 'height="100%"'),
                     }}
                   />
                 </div>
