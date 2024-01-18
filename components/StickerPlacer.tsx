@@ -1,10 +1,11 @@
 "use client"
 
-import { SetStateAction, useRef, useState } from "react"
+import { SetStateAction, useEffect, useRef, useState } from "react"
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable"
 import stickers from "@/public/sticker.json"
 import { Plus, Save, Smiley } from "@/components/Icons"
 import Laptop from "@/illustrations/Laptop"
+import * as rive from "@rive-app/canvas"
 
 export default function StickerPlacer() {
   const [draggedSticker, setDraggedSticker] = useState<number | null>(null)
@@ -12,6 +13,7 @@ export default function StickerPlacer() {
     stickers.map(() => ({ x: 0, y: 0 }))
   )
   const laptopRef = useRef<HTMLDivElement>(null)
+  const dissolveAnimation = useRef<HTMLCanvasElement>(null)
 
   const handleDragStart = (
     e: DraggableEvent,
@@ -51,6 +53,16 @@ export default function StickerPlacer() {
 
           data.node.style.opacity = "0"
 
+          // place canvas at the sticker position
+          dissolveAnimation.current!.style.left = stickerRect.left + "px"
+          dissolveAnimation.current!.style.top = stickerRect.top + "px"
+
+          const dissolve = new rive.Rive({
+            src: "/dissolve.riv",
+            canvas: dissolveAnimation.current as HTMLCanvasElement,
+            autoplay: true,
+          })
+
           setTimeout(() => {
             setDragPosition((prev) => {
               const next = [...prev]
@@ -71,6 +83,14 @@ export default function StickerPlacer() {
   return (
     <>
       <div className="w-full h-full" ref={laptopRef}>
+        <canvas
+          className="fixed pointer-events-none"
+          id="canvas"
+          ref={dissolveAnimation}
+          width="88"
+          height="88"
+          style={{ zIndex: 100, marginTop: "-20px", marginLeft: "-12px" }}
+        ></canvas>
         <Laptop className="w-full h-full" />
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-60 z-10 w-auto">

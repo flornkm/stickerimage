@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@rive-app/canvas": "^2.9.3",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
