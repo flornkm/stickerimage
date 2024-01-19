@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, useEffect } from "react"
 import { createRoot } from "react-dom/client"
 
@@ -22,7 +24,7 @@ export default function Notification(props: {
 
   return (
     <div
-      className={`fixed left-0 top-8 w-full px-6 flex items-center justify-center pointer-events-none ${
+      className={`fixed z-50 left-0 top-8 w-full px-6 flex items-center justify-center pointer-events-none ${
         animateIn ? "animate-fade-in-down" : "animate-fade-out-down"
       }`}
     >
@@ -49,10 +51,11 @@ export const showNotification = (message: string, timer: number = 5000) => {
     </Notification>
   )
 
-  createRoot(notificationContainer).render(notification)
+  const root = createRoot(notificationContainer)
+
+  root.render(notification)
 
   setTimeout(() => {
-    const root = createRoot(notificationContainer)
     root.unmount()
     removeNotificationContainer()
   }, timer + 300) // Adding a small buffer time for the fade-out animation

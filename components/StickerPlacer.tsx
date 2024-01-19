@@ -1,14 +1,22 @@
 "use client"
 
-import { SetStateAction, useRef, useState } from "react"
+import { SetStateAction, useEffect, useRef, useState } from "react"
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable"
 import stickerData from "@/public/sticker.json"
-import { Plus, RotateRight, RotateLeft, Save, Smiley } from "@/components/Icons"
+import {
+  Plus,
+  RotateRight,
+  RotateLeft,
+  Save,
+  Smiley,
+  File,
+} from "@/components/Icons"
 import Laptop from "@/illustrations/Laptop"
 import * as rive from "@rive-app/canvas"
 import { showNotification } from "./Notification"
 import NextImage from "next/image"
 import * as htmlToImage from "html-to-image"
+import { hideDialog, showDialog } from "./Dialog"
 
 export default function StickerPlacer() {
   const [stickerState, setStickerState] = useState(
@@ -262,8 +270,6 @@ export default function StickerPlacer() {
 
           const rgb = `rgb(${r}, ${g}, ${b})`
 
-          console.log(rgb)
-
           if (r === 0 && g === 0 && b === 0)
             return (screenRef.current!.style.backgroundColor = "transparent")
 
@@ -377,20 +383,54 @@ export default function StickerPlacer() {
             </div>
           </div>
           <div className="flex justify-between gap-3">
-            <input
-              type="file"
-              accept=".png, .jpg, .jpeg"
-              onChange={handleMemojiUpload}
-              id="memojiInput"
-              className="hidden"
-            />
-            <label
-              htmlFor="memojiInput"
+            <button
+              onClick={() =>
+                showDialog(
+                  <div className="w-full h-full">
+                    <h2 className="text-lg font-semibold mb-4">
+                      How to upload
+                    </h2>
+                    <p className="text-zinc-500 mb-6">
+                      It is easy. Just open iMessage or another app where you
+                      can preview your Memoji. Open it, make a screenshot and
+                      cut out to the edges of the Memoji. Then upload it here.
+                      <br /> <br />
+                      The background color of the Memoji will be used as the
+                      background color of the screen.
+                    </p>
+                    <NextImage
+                      src="/how-to-screenshot.jpg"
+                      alt="How to upload"
+                      width={1280}
+                      height={720}
+                      className="rounded-lg mb-6"
+                    />
+                    <input
+                      type="file"
+                      accept=".png, .jpg, .jpeg"
+                      onChange={(e) => {
+                        handleMemojiUpload(e).then(() => {
+                          hideDialog()
+                        })
+                      }}
+                      id="memojiInput"
+                      className="hidden"
+                    />
+                    <label
+                      htmlFor="memojiInput"
+                      className="h-10 w-full gap-2 font-medium flex items-center justify-center shadow-md shadow-black/5 transition-colors bg-black rounded-lg cursor-pointer text-white hover:bg-zinc-800"
+                    >
+                      <File size={20} />
+                      Choose File
+                    </label>
+                  </div>
+                )
+              }
               className="h-10 w-full gap-2 font-medium flex items-center justify-center border border-zinc-200 shadow-md shadow-black/5 transition-colors hover:bg-zinc-50 rounded-lg cursor-pointer"
             >
               <Smiley size={20} />
               Replace Memoji
-            </label>
+            </button>
             <button
               onClick={saveImage}
               className="h-10 w-full gap-2 font-medium flex items-center justify-center bg-black text-white shadow-md shadow-black/5 transition-colors hover:bg-zinc-800 rounded-lg"
