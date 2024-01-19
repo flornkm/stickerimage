@@ -183,11 +183,22 @@ export default function StickerPlacer() {
         }
 
         if (svgProps.width > 48 || svgProps.height > 48) {
-          showNotification(
+          return showNotification(
             "Error: SVG file dimensions should be 48 pixels or smaller."
           )
-          return
         }
+
+        if (
+          stickerState.find(
+            (sticker) =>
+              sticker.position.x === 0 &&
+              sticker.position.y === 0 &&
+              sticker.custom === true
+          )
+        )
+          return showNotification(
+            "Error: You need to move the existing custom sticker first."
+          )
 
         const svgString = svg.documentElement.outerHTML
 
