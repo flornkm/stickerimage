@@ -148,7 +148,7 @@ export default function StickerPlacer() {
                     zIndex: dragPosition[index]?.zIndex || 0,
                   }}
                   className={
-                    "flex items-center justify-center transition-opacity w-14 flex-shrink-0 aspect-square rounded-md relative group " +
+                    "cursor-grab active:cursor-grabbing flex items-center justify-center transition-opacity w-14 flex-shrink-0 aspect-square rounded-md relative group " +
                     (dragPosition[index]?.x === 0 &&
                     dragPosition[index]?.y === 0 &&
                     draggedSticker !== index
@@ -199,7 +199,7 @@ export default function StickerPlacer() {
                     </div>
                   )}
                   <div
-                    className="cursor-grab active:cursor-grabbing transition-all"
+                    className="transition-all"
                     style={{
                       zIndex: dragPosition[index]?.zIndex || 0,
                       transform: `rotate(${dragPosition[index]?.rotation}deg)`,
