@@ -171,7 +171,7 @@ export default function StickerPlacer() {
       })
   }
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleStickerUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
     if (file) {
       const reader = new FileReader()
@@ -223,6 +223,28 @@ export default function StickerPlacer() {
           },
         ])
       })
+    }
+  }
+
+  const replaceMemoji = (file: File) => {
+    const reader = new FileReader()
+    reader.readAsDataURL(file)
+
+    reader.onloadend = () => {
+      setMemoji(reader.result as string)
+    }
+  }
+
+  const handleMemojiUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      if (file.type === "image/png" || file.type === "image/jpeg") {
+        replaceMemoji(file)
+      } else {
+        showNotification(
+          "Error: Please upload a valid PNG or JPEG file for the memoji."
+        )
+      }
     }
   }
 
@@ -315,7 +337,7 @@ export default function StickerPlacer() {
               <input
                 type="file"
                 accept=".svg"
-                onChange={handleFileUpload}
+                onChange={handleStickerUpload}
                 id="fileInput"
                 className="absolute z-10 inset-0 opacity-0 cursor-pointer"
               />
@@ -330,10 +352,20 @@ export default function StickerPlacer() {
             </div>
           </div>
           <div className="flex justify-between gap-3">
-            <button className="h-10 w-full gap-2 font-medium flex items-center justify-center border border-zinc-200 shadow-md shadow-black/5 transition-colors hover:bg-zinc-50 rounded-lg">
+            <input
+              type="file"
+              accept=".png, .jpg, .jpeg"
+              onChange={handleMemojiUpload}
+              id="memojiInput"
+              className="hidden"
+            />
+            <label
+              htmlFor="memojiInput"
+              className="h-10 w-full gap-2 font-medium flex items-center justify-center border border-zinc-200 shadow-md shadow-black/5 transition-colors hover:bg-zinc-50 rounded-lg cursor-pointer"
+            >
               <Smiley size={20} />
               Replace Memoji
-            </button>
+            </label>
             <button
               onClick={saveImage}
               className="h-10 w-full gap-2 font-medium flex items-center justify-center bg-black text-white shadow-md shadow-black/5 transition-colors hover:bg-zinc-800 rounded-lg"
