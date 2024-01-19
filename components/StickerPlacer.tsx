@@ -107,7 +107,6 @@ export default function StickerPlacer() {
             data.node.style.opacity = "1"
           })
         } else {
-          // Remove sticker if it's a custom one, but also play the dissolve animation
           setStickerState((prev) => {
             const next = [...prev]
             next.splice(stickerIndex, 1)
@@ -151,16 +150,6 @@ export default function StickerPlacer() {
     return false
   }
 
-  const generateRandomPosInsideLaptop = () => {
-    const laptop = laptopRef.current?.getBoundingClientRect()
-    if (laptop) {
-      const x = Math.random() * (laptop.right - laptop.left)
-      const y = Math.random() * (laptop.bottom - laptop.top)
-      return { x, y }
-    }
-    return { x: 0, y: 0 }
-  }
-
   const loadSvg = async (url: string) => {
     return fetch(url)
       .then(function (response) {
@@ -187,8 +176,8 @@ export default function StickerPlacer() {
             name: file.name,
             custom: true,
             position: {
-              x: generateRandomPosInsideLaptop().x,
-              y: generateRandomPosInsideLaptop().y,
+              x: 0,
+              y: 0,
               rotation: 0,
               zIndex:
                 Math.max(...prev.map((sticker) => sticker.position.zIndex)) + 1,
@@ -201,7 +190,7 @@ export default function StickerPlacer() {
 
   return (
     <>
-      <div className="w-full h-full" ref={laptopRef}>
+      <div className="w-full h-full relative" ref={laptopRef}>
         <canvas
           className="fixed pointer-events-none"
           id="canvas"
@@ -210,22 +199,27 @@ export default function StickerPlacer() {
           height="88"
           style={{ zIndex: 100, marginTop: "-20px", marginLeft: "-12px" }}
         ></canvas>
-        <Laptop className="w-full h-full" />
-        {stickerState.length > 9 &&
-          stickerState.map((sticker, index) => {
-            if (index >= 9)
-              return (
-                <Sticker
-                  sticker={sticker}
-                  index={index}
-                  handleDragStart={handleDragStart}
-                  handleDragStop={handleDragStop}
-                  draggedSticker={draggedSticker}
-                  setStickerState={setStickerState}
-                  stickerIsOnLaptop={stickerIsOnLaptop}
-                />
-              )
-          })}
+        <div className="relative">
+          <Laptop className="w-full h-full" />
+          {/* Render stickers inside laptop div */}
+          {stickerState.length > 9 &&
+            stickerState.map((sticker, index) => {
+              if (index >= 9)
+                return (
+                  <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                    <Sticker
+                      sticker={sticker}
+                      index={index}
+                      handleDragStart={handleDragStart}
+                      handleDragStop={handleDragStop}
+                      draggedSticker={draggedSticker}
+                      setStickerState={setStickerState}
+                      stickerIsOnLaptop={stickerIsOnLaptop}
+                    />
+                  </div>
+                )
+            })}
+        </div>
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-60 z-10 w-auto">
         <div className="bg-white border-t border-l border-zinc-200 rotate-45 absolute left-1/2 z-20 -translate-x-1/2 -top-3 rounded-tl-md w-6 aspect-square" />
@@ -329,7 +323,7 @@ function Sticker({
         x: sticker.position?.x || 0,
         y: sticker.position?.y || 0,
       }}
-      key={index}
+      key={sticker.name}
       onStart={(e) => handleDragStart(e, index)}
       onStop={handleDragStop}
       disabled={draggedSticker !== null && draggedSticker !== index}
@@ -342,15 +336,14 @@ function Sticker({
           "cursor-grab active:cursor-grabbing flex items-center justify-center transition-opacity w-14 flex-shrink-0 aspect-square rounded-md relative group " +
           (sticker.position?.x === 0 &&
           sticker.position?.y === 0 &&
-          draggedSticker !== index
+          draggedSticker !== index &&
+          !sticker.custom
             ? "hover:bg-zinc-200"
             : "")
         }
       >
-        {stickerIsOnLaptop(
-          sticker.position.x || 0,
-          sticker.position.y || 0
-        ) && (
+        {(stickerIsOnLaptop(sticker.position.x || 0, sticker.position.y || 0) ||
+          sticker.custom) && (
           <div
             className={
               "tooltip absolute bg-black text-white z-40 hidden group-hover:flex -top-8 gap-0.5 p-0.5 rounded-md"
