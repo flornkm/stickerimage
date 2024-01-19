@@ -66,7 +66,7 @@ export default function StickerPlacer() {
             }
             return next
           })
-        } else {
+        } else if (!currentSticker.custom) {
           setStickerState((prev) => {
             const next = [...prev]
             next[stickerIndex] = {
@@ -82,7 +82,6 @@ export default function StickerPlacer() {
 
           data.node.style.opacity = "0"
 
-          // place canvas at the sticker position
           dissolveAnimation.current!.style.left = stickerRect.left + "px"
           dissolveAnimation.current!.style.top = stickerRect.top + "px"
 
@@ -106,6 +105,22 @@ export default function StickerPlacer() {
               return next
             })
             data.node.style.opacity = "1"
+          })
+        } else {
+          // Remove sticker if it's a custom one, but also play the dissolve animation
+          setStickerState((prev) => {
+            const next = [...prev]
+            next.splice(stickerIndex, 1)
+            return next
+          })
+
+          dissolveAnimation.current!.style.left = stickerRect.left + "px"
+          dissolveAnimation.current!.style.top = stickerRect.top + "px"
+
+          new rive.Rive({
+            src: "/dissolve.riv",
+            canvas: dissolveAnimation.current as HTMLCanvasElement,
+            autoplay: true,
           })
         }
       }
