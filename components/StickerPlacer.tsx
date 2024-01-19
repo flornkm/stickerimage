@@ -76,6 +76,7 @@ export default function StickerPlacer() {
                 ...currentSticker.position,
                 x: 0,
                 y: 0,
+                rotation: 0,
               },
             }
             return next
@@ -83,6 +84,7 @@ export default function StickerPlacer() {
 
           data.node.style.transition = "opacity 0s"
           data.node.style.opacity = "0"
+          data.node.style.transform = "rotate(0deg)"
 
           dissolveAnimation.current!.style.left = stickerRect.left + "px"
           dissolveAnimation.current!.style.top = stickerRect.top + "px"
@@ -102,6 +104,7 @@ export default function StickerPlacer() {
                   ...currentSticker.position,
                   x: 0,
                   y: 0,
+                  rotation: 0,
                 },
               }
               return next
