@@ -238,7 +238,10 @@ export default function StickerPlacer() {
             stickerState.map((sticker, index) => {
               if (index >= 9)
                 return (
-                  <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none">
+                  <div
+                    key={sticker.name}
+                    className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none"
+                  >
                     <Sticker
                       sticker={sticker}
                       index={index}
