@@ -235,10 +235,41 @@ export default function StickerPlacer() {
     }
   }
 
-  const handleMemojiUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleMemojiUpload = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const file = event.target.files?.[0]
     if (file) {
       if (file.type === "image/png" || file.type === "image/jpeg") {
+        // Find out the background color of the image
+        const img = new Image()
+
+        img.src = URL.createObjectURL(file)
+        img.onload = () => {
+          const canvas = document.createElement("canvas")
+          canvas.width = img.width
+          canvas.height = img.height
+
+          const context = canvas.getContext("2d")
+          context!.drawImage(img, 0, 0)
+
+          const data = context!.getImageData(0, 0, img.width, img.height)
+            .data as Uint8ClampedArray
+
+          const r = data[0]
+          const g = data[1]
+          const b = data[2]
+
+          const rgb = `rgb(${r}, ${g}, ${b})`
+
+          console.log(rgb)
+
+          if (r === 0 && g === 0 && b === 0)
+            return (screenRef.current!.style.backgroundColor = "transparent")
+
+          screenRef.current!.style.backgroundColor = rgb
+        }
+
         replaceMemoji(file)
       } else {
         showNotification(
@@ -249,27 +280,21 @@ export default function StickerPlacer() {
   }
 
   const saveImage = () => {
-    // toolbarRef.current!.style.display = "none"
-
     htmlToImage
       .toPng(screenRef.current as HTMLDivElement)
       .then(function (dataUrl) {
-        //open the image in a new tab
         const link = document.createElement("a")
         link.download = "memoji.png"
         link.href = dataUrl
         link.click()
-
-        // toolbarRef.current!.style.display = "block"
       })
       .catch(function (error) {
         console.error("Error capturing the image:", error)
-        // toolbarRef.current!.style.display = "block"
       })
   }
 
   return (
-    <div ref={screenRef}>
+    <div ref={screenRef} className="rounded-3xl">
       <div className="w-full h-full relative">
         <canvas
           className="fixed pointer-events-none"
