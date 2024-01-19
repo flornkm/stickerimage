@@ -2,16 +2,20 @@
 
 import { SetStateAction, useRef, useState } from "react"
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable"
-import stickers from "@/public/sticker.json"
+import stickerData from "@/public/sticker.json"
 import { Plus, RotateRight, RotateLeft, Save, Smiley } from "@/components/Icons"
 import Laptop from "@/illustrations/Laptop"
 import * as rive from "@rive-app/canvas"
 
 export default function StickerPlacer() {
-  const [draggedSticker, setDraggedSticker] = useState<number | null>(null)
-  const [dragPosition, setDragPosition] = useState<Record<string, number>[]>(
-    stickers.map(() => ({ x: 0, y: 0, rotation: 0, zIndex: 0 }))
+  const [stickerState, setStickerState] = useState(
+    stickerData.map((sticker, index) => ({
+      ...sticker,
+      position: { x: 0, y: 0, rotation: 0, zIndex: index },
+    }))
   )
+  const [draggedSticker, setDraggedSticker] = useState<number | null>(null)
+
   const laptopRef = useRef<HTMLDivElement>(null)
   const dissolveAnimation = useRef<HTMLCanvasElement>(null)
 
@@ -20,11 +24,15 @@ export default function StickerPlacer() {
     index: SetStateAction<number | null>
   ) => {
     setDraggedSticker(index)
-    setDragPosition((prev) => {
+    setStickerState((prev) => {
       const next = [...prev]
       next[index as number] = {
         ...next[index as number],
-        zIndex: Math.max(...next.map((sticker) => sticker.zIndex)) + 1,
+        position: {
+          ...next[index as number].position,
+          zIndex:
+            Math.max(...next.map((sticker) => sticker.position.zIndex)) + 1,
+        },
       }
       return next
     })
@@ -33,6 +41,9 @@ export default function StickerPlacer() {
   const handleDragStop = (e: DraggableEvent, data: DraggableData) => {
     const laptop = laptopRef.current?.getBoundingClientRect()
     if (laptop) {
+      const stickerIndex = draggedSticker as number
+      const currentSticker = stickerState[stickerIndex]
+
       if (data.node instanceof HTMLElement) {
         const stickerRect = data.node.getBoundingClientRect()
         if (
@@ -41,23 +52,29 @@ export default function StickerPlacer() {
           stickerRect.top >= laptop.top &&
           stickerRect.bottom <= laptop.bottom
         ) {
-          setDragPosition((prev) => {
+          setStickerState((prev) => {
             const next = [...prev]
-            next[draggedSticker as number] = {
-              x: data.x,
-              y: data.y,
-              rotation: next[draggedSticker as number].rotation,
-              zIndex: next[draggedSticker as number].zIndex,
+            next[stickerIndex] = {
+              ...currentSticker,
+              position: {
+                x: data.x,
+                y: data.y,
+                rotation: currentSticker.position.rotation,
+                zIndex: currentSticker.position.zIndex,
+              },
             }
             return next
           })
         } else {
-          setDragPosition((prev) => {
+          setStickerState((prev) => {
             const next = [...prev]
-            next[draggedSticker as number] = {
-              x: data.x,
-              y: data.y,
-              rotation: next[draggedSticker as number].rotation,
+            next[stickerIndex] = {
+              ...currentSticker,
+              position: {
+                ...currentSticker.position,
+                x: currentSticker.position.x + data.deltaX,
+                y: currentSticker.position.y + data.deltaY,
+              },
             }
             return next
           })
@@ -75,17 +92,20 @@ export default function StickerPlacer() {
           })
 
           setTimeout(() => {
-            setDragPosition((prev) => {
+            setStickerState((prev) => {
               const next = [...prev]
-              next[draggedSticker as number] = {
-                x: 0,
-                y: 0,
-                rotation: 0,
+              next[stickerIndex] = {
+                ...currentSticker,
+                position: {
+                  ...currentSticker.position,
+                  x: 0,
+                  y: 0,
+                },
               }
               return next
             })
             data.node.style.opacity = "1"
-          }, 500)
+          })
         }
       }
       setDraggedSticker(null)
@@ -115,6 +135,56 @@ export default function StickerPlacer() {
     return false
   }
 
+  const generateRandomPosInsideLaptop = () => {
+    const laptop = laptopRef.current?.getBoundingClientRect()
+    if (laptop) {
+      const x = Math.random() * (laptop.right - laptop.left)
+      const y = Math.random() * (laptop.bottom - laptop.top)
+      return { x, y }
+    }
+    return { x: 0, y: 0 }
+  }
+
+  const loadSvg = async (url: string) => {
+    return fetch(url)
+      .then(function (response) {
+        return response.text()
+      })
+      .then(function (raw) {
+        return new window.DOMParser().parseFromString(raw, "image/svg+xml")
+      })
+  }
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.readAsText(file)
+      loadSvg(URL.createObjectURL(file)).then((svg) => {
+        const svgString = svg.documentElement.outerHTML
+
+        loadSvg(URL.createObjectURL(file)).then((svg) => {
+          const svgString = svg.documentElement.outerHTML
+
+          setStickerState((prev) => [
+            ...prev,
+            {
+              data: svgString,
+              name: file.name,
+              position: {
+                ...generateRandomPosInsideLaptop(),
+                rotation: 0,
+                zIndex:
+                  Math.max(...prev.map((sticker) => sticker.position.zIndex)) +
+                  1,
+              },
+            },
+          ])
+        })
+      })
+    }
+  }
+
   return (
     <>
       <div className="w-full h-full" ref={laptopRef}>
@@ -128,82 +198,14 @@ export default function StickerPlacer() {
         ></canvas>
         <Laptop className="w-full h-full" />
       </div>
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-60 z-10 w-auto">
-        <div className="bg-white border-t border-l border-zinc-200 rotate-45 absolute left-1/2 z-20 -translate-x-1/2 -top-3 rounded-tl-md w-6 aspect-square" />
-        <div className="bg-white border border-zinc-200 p-2 w-screen max-w-sm rounded-xl relative shadow-lg">
-          <div className="relative z-20 flex xs:justify-between flex-wrap gap-4 bg-zinc-100 rounded-lg p-2 mb-2">
-            {stickers.map((sticker, index) => (
-              <Draggable
-                position={{
-                  x: dragPosition[index]?.x || 0,
-                  y: dragPosition[index]?.y || 0,
-                }}
-                key={index}
-                onStart={(e) => handleDragStart(e, index)}
-                onStop={handleDragStop}
-                disabled={draggedSticker !== null && draggedSticker !== index}
-              >
-                <div
-                  style={{
-                    zIndex: dragPosition[index]?.zIndex || 0,
-                  }}
-                  className={
-                    "cursor-grab active:cursor-grabbing flex items-center justify-center transition-opacity w-14 flex-shrink-0 aspect-square rounded-md relative group " +
-                    (dragPosition[index]?.x === 0 &&
-                    dragPosition[index]?.y === 0 &&
-                    draggedSticker !== index
-                      ? "hover:bg-zinc-200"
-                      : "")
-                  }
-                >
-                  {stickerIsOnLaptop(
-                    dragPosition[index]?.x || 0,
-                    dragPosition[index]?.y || 0
-                  ) && (
-                    <div
-                      className={
-                        "tooltip absolute bg-black text-white z-40 hidden group-hover:flex -top-8 gap-0.5 p-0.5 rounded-md"
-                      }
-                    >
-                      <div className="w-4 bg-black rotate-45 aspect-square rounded-sm absolute left-1/2 -translate-x-1/2 -bottom-1" />
-                      <button
-                        onClick={() => {
-                          setDragPosition((prev) => {
-                            const next = [...prev]
-                            next[index] = {
-                              ...next[index],
-                              rotation: next[index].rotation + 22.5,
-                            }
-                            return next
-                          })
-                        }}
-                        className="w-7 aspect-square relative z-50 flex items-center justify-center transition-colors hover:bg-zinc-800 rounded-[4px]"
-                      >
-                        <RotateRight size={20} />
-                      </button>
-                      <button
-                        onClick={() => {
-                          setDragPosition((prev) => {
-                            const next = [...prev]
-                            next[index] = {
-                              ...next[index],
-                              rotation: next[index].rotation - 22.5,
-                            }
-                            return next
-                          })
-                        }}
-                        className="w-7 aspect-square relative z-50 flex items-center justify-center transition-colors hover:bg-zinc-800 rounded-[4px]"
-                      >
-                        <RotateLeft size={20} />
-                      </button>
-                    </div>
-                  )}
+      {/* {stickers.length > 9 && (
+        <div className="absolute top-1/2 translte-y-1/2 -left-48 w-40 h-96 bg-white border border-zinc-200 rounded-lg">
+          {stickers.map((sticker, index) => {
+            if (index > 9)
+              return (
+                <div className="w-full h-16 flex items-center justify-center border-b border-zinc-200">
                   <div
                     className="transition-all"
-                    style={{
-                      zIndex: dragPosition[index]?.zIndex || 0,
-                      transform: `rotate(${dragPosition[index]?.rotation}deg)`,
-                    }}
                     dangerouslySetInnerHTML={{
                       __html: sticker.data
                         .replace(/width="\d+"/g, 'width="100%"')
@@ -211,12 +213,131 @@ export default function StickerPlacer() {
                     }}
                   />
                 </div>
-              </Draggable>
-            ))}
-            <div className="flex items-center justify-center w-14 flex-shrink-0 aspect-square">
-              <button className="w-10 h-10 transition-all bg-black text-white rounded-md flex items-center justify-center hover:bg-zinc-800">
+              )
+          })}
+        </div>
+      )} */}
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-60 z-10 w-auto">
+        <div className="bg-white border-t border-l border-zinc-200 rotate-45 absolute left-1/2 z-20 -translate-x-1/2 -top-3 rounded-tl-md w-6 aspect-square" />
+        <div className="bg-white border border-zinc-200 p-2 w-screen max-w-sm rounded-xl relative shadow-lg">
+          <div className="relative z-20 flex xs:justify-between flex-wrap gap-4 bg-zinc-100 rounded-lg p-2 mb-2">
+            {stickerState.map((sticker, index) => {
+              if (index < 10)
+                return (
+                  <Draggable
+                    position={{
+                      x: sticker.position?.x || 0,
+                      y: sticker.position?.y || 0,
+                    }}
+                    key={index}
+                    onStart={(e) => handleDragStart(e, index)}
+                    onStop={handleDragStop}
+                    disabled={
+                      draggedSticker !== null && draggedSticker !== index
+                    }
+                  >
+                    <div
+                      style={{
+                        zIndex: sticker.position?.zIndex || 0,
+                      }}
+                      className={
+                        "cursor-grab active:cursor-grabbing flex items-center justify-center transition-opacity w-14 flex-shrink-0 aspect-square rounded-md relative group " +
+                        (sticker.position?.x === 0 &&
+                        sticker.position?.y === 0 &&
+                        draggedSticker !== index
+                          ? "hover:bg-zinc-200"
+                          : "")
+                      }
+                    >
+                      {stickerIsOnLaptop(
+                        sticker.position.x || 0,
+                        sticker.position.y || 0
+                      ) && (
+                        <div
+                          className={
+                            "tooltip absolute bg-black text-white z-40 hidden group-hover:flex -top-8 gap-0.5 p-0.5 rounded-md"
+                          }
+                        >
+                          <div className="w-4 bg-black rotate-45 aspect-square rounded-sm absolute left-1/2 -translate-x-1/2 -bottom-1" />
+                          <button
+                            onClick={() => {
+                              setStickerState((prev) => {
+                                const next = [...prev]
+                                next[index] = {
+                                  ...next[index],
+                                  position: {
+                                    rotation:
+                                      next[index].position.rotation + 22.5,
+                                    x: next[index].position.x,
+                                    y: next[index].position.y,
+                                    zIndex: next[index].position.zIndex,
+                                  },
+                                }
+                                return next
+                              })
+                            }}
+                            className="w-7 aspect-square relative z-50 flex items-center justify-center transition-colors hover:bg-zinc-800 rounded-[4px]"
+                          >
+                            <RotateRight size={20} />
+                          </button>
+                          <button
+                            onClick={() => {
+                              setStickerState((prev) => {
+                                const next = [...prev]
+                                next[index] = {
+                                  ...next[index],
+                                  position: {
+                                    rotation:
+                                      next[index].position.rotation - 22.5,
+                                    x: next[index].position.x,
+                                    y: next[index].position.y,
+                                    zIndex: next[index].position.zIndex,
+                                  },
+                                }
+                                return next
+                              })
+                            }}
+                            className="w-7 aspect-square relative z-50 flex items-center justify-center transition-colors hover:bg-zinc-800 rounded-[4px]"
+                          >
+                            <RotateLeft size={20} />
+                          </button>
+                        </div>
+                      )}
+                      <div
+                        className="transition-all"
+                        style={{
+                          zIndex: sticker.position?.zIndex || 0,
+                          transform: `rotate(${sticker.position?.rotation}deg)`,
+                        }}
+                        dangerouslySetInnerHTML={{
+                          __html: sticker.data
+                            .replace(/width="\d+"/g, 'width="100%"')
+                            .replace(/height="\d+"/g, 'height="100%"'),
+                        }}
+                      />
+                    </div>
+                  </Draggable>
+                )
+            })}
+            <div className="flex items-center justify-center group w-14 flex-shrink-0 aspect-square relative">
+              {/* <button className="w-10 h-10 transition-all bg-black text-white rounded-md flex items-center justify-center hover:bg-zinc-800">
                 <Plus />
-              </button>
+              </button> */}
+              <input
+                type="file"
+                accept=".svg"
+                onChange={handleFileUpload}
+                id="fileInput"
+                className="absolute z-10 inset-0 opacity-0 cursor-pointer"
+              />
+              <label
+                htmlFor="fileInput"
+                className="flex items-center justify-center w-14 flex-shrink-0 aspect-square cursor-pointer relative z-20"
+              >
+                <button className="w-10 h-10 transition-all pointer-events-none bg-black text-white rounded-md flex items-center justify-center group-hover:bg-zinc-800">
+                  <Plus />
+                </button>
+              </label>
             </div>
           </div>
           <div className="flex justify-between gap-3">
