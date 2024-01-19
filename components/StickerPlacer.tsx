@@ -6,7 +6,9 @@ import stickerData from "@/public/sticker.json"
 import { Plus, RotateRight, RotateLeft, Save, Smiley } from "@/components/Icons"
 import Laptop from "@/illustrations/Laptop"
 import * as rive from "@rive-app/canvas"
-import Notification, { showNotification } from "./Notification"
+import { showNotification } from "./Notification"
+import NextImage from "next/image"
+import * as htmlToImage from "html-to-image"
 
 export default function StickerPlacer() {
   const [stickerState, setStickerState] = useState(
@@ -17,8 +19,11 @@ export default function StickerPlacer() {
     }))
   )
   const [draggedSticker, setDraggedSticker] = useState<number | null>(null)
+  const [memoji, setMemoji] = useState<string>("/default-memoji.png")
 
   const laptopRef = useRef<HTMLDivElement>(null)
+  const toolbarRef = useRef<HTMLDivElement>(null)
+  const screenRef = useRef<HTMLDivElement>(null)
   const dissolveAnimation = useRef<HTMLCanvasElement>(null)
 
   const handleDragStart = (
@@ -221,9 +226,29 @@ export default function StickerPlacer() {
     }
   }
 
+  const saveImage = () => {
+    toolbarRef.current!.style.display = "none"
+
+    htmlToImage
+      .toPng(screenRef.current as HTMLDivElement)
+      .then(function (dataUrl) {
+        //open the image in a new tab
+        const link = document.createElement("a")
+        link.download = "memoji.png"
+        link.href = dataUrl
+        link.click()
+
+        toolbarRef.current!.style.display = "block"
+      })
+      .catch(function (error) {
+        console.error("Error capturing the image:", error)
+        toolbarRef.current!.style.display = "block"
+      })
+  }
+
   return (
-    <>
-      <div className="w-full h-full relative" ref={laptopRef}>
+    <div ref={screenRef}>
+      <div className="w-full h-full relative">
         <canvas
           className="fixed pointer-events-none"
           id="canvas"
@@ -232,8 +257,17 @@ export default function StickerPlacer() {
           height="88"
           style={{ zIndex: 100, marginTop: "-20px", marginLeft: "-12px" }}
         ></canvas>
-        <div className="relative">
-          <Laptop className="w-full h-full" />
+        <div className="w-full flex flex-col-reverse aspect-square">
+          <div ref={laptopRef} className="relative z-10">
+            <Laptop className="w-full h-full bottom-0 flex-shrink-0" />
+          </div>
+          <NextImage
+            src={memoji}
+            alt="Memoji"
+            width={256}
+            height={256}
+            className="absolute object-contain top-0 left-1/2 -translate-x-1/2 w-48 h-auto"
+          />
           {stickerState.length > 9 &&
             stickerState.map((sticker, index) => {
               if (index >= 9)
@@ -256,7 +290,10 @@ export default function StickerPlacer() {
             })}
         </div>
       </div>
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-60 z-10 w-auto">
+      <div
+        className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[332px] z-10 w-auto"
+        ref={toolbarRef}
+      >
         <div className="bg-white border-t border-l border-zinc-200 rotate-45 absolute left-1/2 z-20 -translate-x-1/2 -top-3 rounded-tl-md w-6 aspect-square" />
         <div className="bg-white border border-zinc-200 p-2 w-screen max-w-sm rounded-xl relative shadow-lg">
           <div className="relative z-20 flex xs:justify-between flex-wrap gap-4 bg-zinc-100 max-h-40 rounded-lg p-2 mb-2">
@@ -297,14 +334,17 @@ export default function StickerPlacer() {
               <Smiley size={20} />
               Replace Memoji
             </button>
-            <button className="h-10 w-full gap-2 font-medium flex items-center justify-center bg-black text-white shadow-md shadow-black/5 transition-colors hover:bg-zinc-800 rounded-lg">
+            <button
+              onClick={saveImage}
+              className="h-10 w-full gap-2 font-medium flex items-center justify-center bg-black text-white shadow-md shadow-black/5 transition-colors hover:bg-zinc-800 rounded-lg"
+            >
               <Save size={20} />
               Save Image
             </button>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
