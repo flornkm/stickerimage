@@ -234,12 +234,11 @@ export default function StickerPlacer() {
         ></canvas>
         <div className="relative">
           <Laptop className="w-full h-full" />
-          {/* Render stickers inside laptop div */}
           {stickerState.length > 9 &&
             stickerState.map((sticker, index) => {
               if (index >= 9)
                 return (
-                  <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                  <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none">
                     <Sticker
                       sticker={sticker}
                       index={index}
@@ -366,7 +365,7 @@ function Sticker({
           zIndex: sticker.position?.zIndex || 0,
         }}
         className={
-          "cursor-grab active:cursor-grabbing flex items-center justify-center transition-opacity w-14 flex-shrink-0 aspect-square rounded-md relative group " +
+          "cursor-grab pointer-events-auto active:cursor-grabbing flex items-center justify-center transition-opacity w-14 flex-shrink-0 aspect-square rounded-md relative group " +
           (sticker.position?.x === 0 &&
           sticker.position?.y === 0 &&
           draggedSticker !== index &&
