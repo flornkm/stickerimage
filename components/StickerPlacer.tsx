@@ -227,7 +227,7 @@ export default function StickerPlacer() {
   }
 
   const saveImage = () => {
-    toolbarRef.current!.style.display = "none"
+    // toolbarRef.current!.style.display = "none"
 
     htmlToImage
       .toPng(screenRef.current as HTMLDivElement)
@@ -238,11 +238,11 @@ export default function StickerPlacer() {
         link.href = dataUrl
         link.click()
 
-        toolbarRef.current!.style.display = "block"
+        // toolbarRef.current!.style.display = "block"
       })
       .catch(function (error) {
         console.error("Error capturing the image:", error)
-        toolbarRef.current!.style.display = "block"
+        // toolbarRef.current!.style.display = "block"
       })
   }
 
@@ -260,6 +260,26 @@ export default function StickerPlacer() {
         <div className="w-full flex flex-col-reverse aspect-square">
           <div ref={laptopRef} className="relative z-10">
             <Laptop className="w-full h-full bottom-0 flex-shrink-0" />
+            {stickerState.length > 9 &&
+              stickerState.map((sticker, index) => {
+                if (index >= 9)
+                  return (
+                    <div
+                      key={sticker.name}
+                      className="absolute z-50 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none"
+                    >
+                      <Sticker
+                        sticker={sticker}
+                        index={index}
+                        handleDragStart={handleDragStart}
+                        handleDragStop={handleDragStop}
+                        draggedSticker={draggedSticker}
+                        setStickerState={setStickerState}
+                        stickerIsOnLaptop={stickerIsOnLaptop}
+                      />
+                    </div>
+                  )
+              })}
           </div>
           <NextImage
             src={memoji}
@@ -268,26 +288,6 @@ export default function StickerPlacer() {
             height={256}
             className="absolute object-contain top-0 left-1/2 -translate-x-1/2 w-48 h-auto"
           />
-          {stickerState.length > 9 &&
-            stickerState.map((sticker, index) => {
-              if (index >= 9)
-                return (
-                  <div
-                    key={sticker.name}
-                    className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none"
-                  >
-                    <Sticker
-                      sticker={sticker}
-                      index={index}
-                      handleDragStart={handleDragStart}
-                      handleDragStop={handleDragStop}
-                      draggedSticker={draggedSticker}
-                      setStickerState={setStickerState}
-                      stickerIsOnLaptop={stickerIsOnLaptop}
-                    />
-                  </div>
-                )
-            })}
         </div>
       </div>
       <div
