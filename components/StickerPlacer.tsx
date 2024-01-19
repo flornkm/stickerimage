@@ -6,6 +6,7 @@ import stickerData from "@/public/sticker.json"
 import { Plus, RotateRight, RotateLeft, Save, Smiley } from "@/components/Icons"
 import Laptop from "@/illustrations/Laptop"
 import * as rive from "@rive-app/canvas"
+import Notification, { showNotification } from "./Notification"
 
 export default function StickerPlacer() {
   const [stickerState, setStickerState] = useState(
@@ -73,13 +74,14 @@ export default function StickerPlacer() {
               ...currentSticker,
               position: {
                 ...currentSticker.position,
-                x: currentSticker.position.x + data.deltaX,
-                y: currentSticker.position.y + data.deltaY,
+                x: 0,
+                y: 0,
               },
             }
             return next
           })
 
+          data.node.style.transition = "opacity 0s"
           data.node.style.opacity = "0"
 
           dissolveAnimation.current!.style.left = stickerRect.left + "px"
@@ -104,8 +106,9 @@ export default function StickerPlacer() {
               }
               return next
             })
+            data.node.style.transition = "opacity 0.3s"
             data.node.style.opacity = "1"
-          })
+          }, 300)
         } else {
           setStickerState((prev) => {
             const next = [...prev]
@@ -167,6 +170,22 @@ export default function StickerPlacer() {
       reader.readAsText(file)
 
       loadSvg(URL.createObjectURL(file)).then((svg) => {
+        const svgProps = {
+          width: Number(
+            svg.documentElement.getAttribute("width")?.replace("px", "")
+          ),
+          height: Number(
+            svg.documentElement.getAttribute("height")?.replace("px", "")
+          ),
+        }
+
+        if (svgProps.width > 48 || svgProps.height > 48) {
+          showNotification(
+            "Error: SVG file dimensions should be 48 pixels or smaller."
+          )
+          return
+        }
+
         const svgString = svg.documentElement.outerHTML
 
         setStickerState((prev) => [
