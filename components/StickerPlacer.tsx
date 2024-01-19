@@ -249,7 +249,6 @@ export default function StickerPlacer() {
     const file = event.target.files?.[0]
     if (file) {
       if (file.type === "image/png" || file.type === "image/jpeg") {
-        // Find out the background color of the image
         const img = new Image()
 
         img.src = URL.createObjectURL(file)
@@ -300,7 +299,7 @@ export default function StickerPlacer() {
   }
 
   return (
-    <div ref={screenRef} className="rounded-3xl">
+    <div ref={screenRef}>
       <div className="w-full h-full relative">
         <canvas
           className="fixed pointer-events-none"
@@ -339,17 +338,17 @@ export default function StickerPlacer() {
             alt="Memoji"
             width={256}
             height={256}
-            className="absolute object-contain top-0 left-1/2 -translate-x-1/2 w-48 h-auto"
+            className="absolute object-contain top-0 left-1/2 -translate-x-1/2 md:w-48 xs:w-40 w-32 h-auto"
           />
         </div>
       </div>
       <div
-        className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[332px] z-10 w-auto"
+        className="md:absolute fixed left-1/2 -translate-x-1/2 bottom-4 md:bottom-0 md:translate-y-[332px] z-10 w-auto"
         ref={toolbarRef}
       >
         <div className="bg-white border-t border-l border-zinc-200 rotate-45 absolute left-1/2 z-20 -translate-x-1/2 -top-3 rounded-tl-md w-6 aspect-square" />
         <div className="bg-white border border-zinc-200 p-2 w-screen max-w-sm rounded-xl relative shadow-lg">
-          <div className="relative z-20 flex xs:justify-between flex-wrap gap-4 bg-zinc-100 max-h-40 rounded-lg p-2 mb-2">
+          <div className="relative z-20 flex xs:justify-between justify-center flex-wrap gap-4 bg-zinc-100 rounded-lg p-2 mb-2">
             {stickerState.map((sticker, index) => {
               if (index < 9)
                 return (
@@ -382,7 +381,7 @@ export default function StickerPlacer() {
               </label>
             </div>
           </div>
-          <div className="flex justify-between gap-3">
+          <div className="flex md:flex-row flex-col justify-between gap-3">
             <button
               onClick={() =>
                 showDialog(
@@ -501,8 +500,10 @@ function Sticker({
       disabled={draggedSticker !== null && draggedSticker !== index}
     >
       <div
+        onTouchStart={(e) => handleDragStart(e, index)}
         style={{
           zIndex: sticker.position?.zIndex || 0,
+          touchAction: "none",
         }}
         className={
           "cursor-grab pointer-events-auto active:cursor-grabbing flex items-center justify-center transition-opacity w-14 flex-shrink-0 aspect-square rounded-md relative group " +
