@@ -13,168 +13,168 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.268"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="-36.3846"
@@ -182,8 +182,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
@@ -191,8 +191,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
@@ -200,10 +200,10 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         fill="black"
-        fill-opacity="0.05"
+        fillOpacity="0.05"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
@@ -211,8 +211,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
@@ -220,8 +220,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
@@ -229,8 +229,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
@@ -238,8 +238,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
@@ -247,8 +247,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
@@ -256,8 +256,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
@@ -265,10 +265,10 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         fill="black"
-        fill-opacity="0.05"
+        fillOpacity="0.05"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.267"
@@ -276,8 +276,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
@@ -285,8 +285,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
@@ -294,8 +294,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
@@ -303,8 +303,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
@@ -312,8 +312,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
@@ -321,8 +321,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
@@ -330,8 +330,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
@@ -339,8 +339,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
@@ -348,8 +348,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
@@ -357,8 +357,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
@@ -366,8 +366,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="-36.3846"
@@ -375,8 +375,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
@@ -384,8 +384,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
@@ -393,8 +393,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
@@ -402,8 +402,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
@@ -411,8 +411,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
@@ -420,8 +420,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
@@ -429,8 +429,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
@@ -438,8 +438,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
@@ -447,8 +447,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
@@ -456,8 +456,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.267"
@@ -465,8 +465,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
@@ -474,8 +474,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
@@ -483,8 +483,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
@@ -492,8 +492,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
@@ -501,8 +501,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
@@ -510,8 +510,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
@@ -519,10 +519,10 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         fill="black"
-        fill-opacity="0.05"
+        fillOpacity="0.05"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
@@ -530,8 +530,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
@@ -539,8 +539,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
@@ -548,8 +548,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
@@ -557,8 +557,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="-36.3846"
@@ -566,8 +566,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
@@ -575,8 +575,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
@@ -584,8 +584,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
@@ -593,8 +593,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
@@ -602,8 +602,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
@@ -611,8 +611,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
@@ -620,8 +620,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
@@ -629,8 +629,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
@@ -638,8 +638,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
@@ -647,8 +647,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.267"
@@ -656,8 +656,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
@@ -665,8 +665,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
@@ -674,8 +674,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
@@ -683,8 +683,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
@@ -692,8 +692,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
@@ -701,8 +701,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
@@ -710,8 +710,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
@@ -719,8 +719,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
@@ -728,8 +728,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
@@ -737,8 +737,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
@@ -746,8 +746,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="-36.3846"
@@ -755,8 +755,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
@@ -764,8 +764,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
@@ -773,8 +773,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
@@ -782,10 +782,10 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         fill="black"
-        fill-opacity="0.05"
+        fillOpacity="0.05"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
@@ -793,8 +793,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
@@ -802,8 +802,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
@@ -811,8 +811,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
@@ -820,8 +820,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
@@ -829,8 +829,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
@@ -838,8 +838,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.267"
@@ -847,8 +847,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
@@ -856,8 +856,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
@@ -865,10 +865,10 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         fill="black"
-        fill-opacity="0.05"
+        fillOpacity="0.05"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
@@ -876,8 +876,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
@@ -885,8 +885,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
@@ -894,8 +894,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
@@ -903,8 +903,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
@@ -912,8 +912,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
@@ -921,8 +921,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
@@ -930,8 +930,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
@@ -939,8 +939,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="-36.3846"
@@ -948,8 +948,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
@@ -957,8 +957,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
@@ -966,8 +966,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
@@ -975,8 +975,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
@@ -984,8 +984,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
@@ -993,8 +993,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
@@ -1002,8 +1002,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
@@ -1011,8 +1011,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
@@ -1020,8 +1020,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
@@ -1029,8 +1029,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.267"
@@ -1038,8 +1038,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
@@ -1047,8 +1047,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
@@ -1056,8 +1056,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
@@ -1065,8 +1065,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
@@ -1074,8 +1074,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
@@ -1083,8 +1083,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
@@ -1092,8 +1092,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
@@ -1101,8 +1101,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
@@ -1110,10 +1110,10 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         fill="black"
-        fill-opacity="0.05"
+        fillOpacity="0.05"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
@@ -1121,8 +1121,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
@@ -1130,8 +1130,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="-36.3846"
@@ -1139,8 +1139,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
@@ -1148,8 +1148,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
@@ -1157,8 +1157,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
@@ -1166,8 +1166,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
@@ -1175,8 +1175,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
@@ -1184,8 +1184,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
@@ -1193,8 +1193,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
@@ -1202,8 +1202,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
@@ -1211,8 +1211,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
@@ -1220,8 +1220,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.267"
@@ -1229,8 +1229,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
@@ -1238,8 +1238,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
@@ -1247,8 +1247,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
@@ -1256,8 +1256,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
@@ -1265,8 +1265,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
@@ -1274,8 +1274,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
@@ -1283,8 +1283,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
@@ -1292,8 +1292,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
@@ -1301,8 +1301,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
@@ -1310,8 +1310,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
@@ -1319,8 +1319,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="-36.3846"
@@ -1328,8 +1328,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
@@ -1337,8 +1337,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
@@ -1346,8 +1346,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
@@ -1355,8 +1355,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
@@ -1364,8 +1364,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
@@ -1373,8 +1373,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
@@ -1382,8 +1382,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
@@ -1391,8 +1391,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
@@ -1400,10 +1400,10 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         fill="black"
-        fill-opacity="0.05"
+        fillOpacity="0.05"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
@@ -1411,8 +1411,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.267"
@@ -1420,8 +1420,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
@@ -1429,8 +1429,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
@@ -1438,8 +1438,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
@@ -1447,8 +1447,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
@@ -1456,8 +1456,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
@@ -1465,8 +1465,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
@@ -1474,8 +1474,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
@@ -1483,8 +1483,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
@@ -1492,8 +1492,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
@@ -1501,8 +1501,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
@@ -1510,8 +1510,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="-36.3846"
@@ -1519,8 +1519,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
@@ -1528,8 +1528,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
@@ -1537,8 +1537,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
@@ -1546,8 +1546,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
@@ -1555,10 +1555,10 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         fill="black"
-        fill-opacity="0.05"
+        fillOpacity="0.05"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
@@ -1566,8 +1566,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
@@ -1575,8 +1575,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
@@ -1584,8 +1584,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
@@ -1593,8 +1593,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
@@ -1602,8 +1602,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.267"
@@ -1611,8 +1611,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
@@ -1620,8 +1620,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
@@ -1629,8 +1629,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
@@ -1638,8 +1638,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
@@ -1647,8 +1647,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
@@ -1656,8 +1656,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
@@ -1665,8 +1665,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
@@ -1674,8 +1674,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
@@ -1683,8 +1683,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
@@ -1692,8 +1692,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
@@ -1701,8 +1701,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="-36.3846"
@@ -1710,8 +1710,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
@@ -1719,8 +1719,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
@@ -1728,8 +1728,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
@@ -1737,8 +1737,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
@@ -1746,8 +1746,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
@@ -1755,8 +1755,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
@@ -1764,8 +1764,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
@@ -1773,8 +1773,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
@@ -1782,8 +1782,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
@@ -1791,8 +1791,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.267"
@@ -1800,8 +1800,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
@@ -1809,8 +1809,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
@@ -1818,8 +1818,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
@@ -1827,8 +1827,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
@@ -1836,8 +1836,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
@@ -1845,8 +1845,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
@@ -1854,8 +1854,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
@@ -1863,8 +1863,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
@@ -1872,8 +1872,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
@@ -1881,8 +1881,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
@@ -1890,8 +1890,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="-36.3846"
@@ -1899,8 +1899,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
@@ -1908,8 +1908,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
@@ -1917,8 +1917,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
@@ -1926,8 +1926,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
@@ -1935,8 +1935,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
@@ -1944,8 +1944,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
@@ -1953,8 +1953,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
@@ -1962,8 +1962,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
@@ -1971,8 +1971,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
@@ -1980,8 +1980,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.267"
@@ -1989,8 +1989,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
@@ -1998,8 +1998,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
@@ -2007,8 +2007,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
@@ -2016,8 +2016,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
@@ -2025,8 +2025,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
@@ -2034,8 +2034,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
@@ -2043,8 +2043,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
@@ -2052,8 +2052,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
@@ -2061,8 +2061,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
@@ -2070,8 +2070,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
@@ -2079,8 +2079,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="-36.3846"
@@ -2088,8 +2088,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
@@ -2097,8 +2097,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
@@ -2106,8 +2106,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
@@ -2115,8 +2115,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
@@ -2124,8 +2124,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
@@ -2133,8 +2133,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
@@ -2142,8 +2142,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
@@ -2151,8 +2151,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
@@ -2160,8 +2160,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
@@ -2169,8 +2169,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.267"
@@ -2178,8 +2178,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
@@ -2187,8 +2187,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
@@ -2196,8 +2196,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
@@ -2205,8 +2205,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
@@ -2214,8 +2214,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
@@ -2223,8 +2223,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
@@ -2232,8 +2232,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
@@ -2241,8 +2241,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
@@ -2250,8 +2250,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
@@ -2259,8 +2259,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
@@ -2268,8 +2268,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="-36.3846"
@@ -2277,8 +2277,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="39.0806"
@@ -2286,8 +2286,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="114.546"
@@ -2295,8 +2295,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="190.011"
@@ -2304,8 +2304,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="265.476"
@@ -2313,8 +2313,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="340.941"
@@ -2322,8 +2322,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="416.407"
@@ -2331,8 +2331,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="491.872"
@@ -2340,8 +2340,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="567.337"
@@ -2349,8 +2349,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="642.802"
@@ -2358,8 +2358,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="718.267"
@@ -2367,8 +2367,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="793.733"
@@ -2376,8 +2376,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="869.198"
@@ -2385,8 +2385,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="944.663"
@@ -2394,8 +2394,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1020.13"
@@ -2403,8 +2403,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1095.59"
@@ -2412,8 +2412,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1171.06"
@@ -2421,8 +2421,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1246.52"
@@ -2430,8 +2430,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1321.99"
@@ -2439,8 +2439,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1397.45"
@@ -2448,8 +2448,8 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <rect
         x="1472.92"
@@ -2457,11 +2457,11 @@ export default function Pattern(props: { className?: string }) {
         width="75.4652"
         height="75.4652"
         stroke="black"
-        stroke-opacity="0.06"
-        stroke-width="1.5093"
+        strokeOpacity="0.06"
+        strokeWidth="1.5093"
       />
       <g filter="url(#filter0_f_5_8)">
-        <rect width="1512" height="981" stroke="white" stroke-width="688" />
+        <rect width="1512" height="981" stroke="white" strokeWidth="688" />
       </g>
       <defs>
         <filter
@@ -2471,9 +2471,9 @@ export default function Pattern(props: { className?: string }) {
           width="2712"
           height="2181"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"

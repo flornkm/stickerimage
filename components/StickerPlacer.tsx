@@ -1,6 +1,6 @@
 "use client"
 
-import { SetStateAction, useEffect, useRef, useState } from "react"
+import { SetStateAction, useRef, useState } from "react"
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable"
 import stickers from "@/public/sticker.json"
 import { Plus, RotateRight, RotateLeft, Save, Smiley } from "@/components/Icons"
@@ -92,6 +92,29 @@ export default function StickerPlacer() {
     }
   }
 
+  const stickerIsOnLaptop = (x: number, y: number) => {
+    const laptop = laptopRef.current?.getBoundingClientRect()
+
+    if (x === 0 && y === 0) return false
+
+    if (laptop) {
+      const mouse = {
+        x: (window.event as MouseEvent).clientX,
+        y: (window.event as MouseEvent).clientY,
+      }
+
+      if (
+        mouse.x < laptop.right &&
+        mouse.x > laptop.left &&
+        mouse.y < laptop.bottom &&
+        mouse.y > laptop.top
+      ) {
+        return true
+      }
+    }
+    return false
+  }
+
   return (
     <>
       <div className="w-full h-full" ref={laptopRef}>
@@ -133,51 +156,52 @@ export default function StickerPlacer() {
                       : "")
                   }
                 >
-                  <div
-                    className={
-                      "tooltip absolute bg-black text-white z-40 -top-8 flex gap-0.5 p-0.5 rounded-md transition-opacity md:opacity-0 " +
-                      (dragPosition[index]?.x === 0 &&
-                      dragPosition[index]?.y === 0
-                        ? "pointer-events-none opacity-0"
-                        : "md:group-hover:opacity-100")
-                    }
-                  >
-                    <div className="w-4 bg-black rotate-45 aspect-square rounded-sm absolute left-1/2 -translate-x-1/2 -bottom-1" />
-                    <button
-                      onClick={() => {
-                        setDragPosition((prev) => {
-                          const next = [...prev]
-                          next[index] = {
-                            ...next[index],
-                            rotation: next[index].rotation + 22.5,
-                          }
-                          return next
-                        })
-                      }}
-                      className="w-7 aspect-square relative z-50 flex items-center justify-center transition-colors hover:bg-zinc-800 rounded-[4px]"
+                  {stickerIsOnLaptop(
+                    dragPosition[index]?.x || 0,
+                    dragPosition[index]?.y || 0
+                  ) && (
+                    <div
+                      className={
+                        "tooltip absolute bg-black text-white z-40 hidden group-hover:flex -top-8 gap-0.5 p-0.5 rounded-md"
+                      }
                     >
-                      <RotateRight size={20} />
-                    </button>
-                    <button
-                      onClick={() => {
-                        setDragPosition((prev) => {
-                          const next = [...prev]
-                          next[index] = {
-                            ...next[index],
-                            rotation: next[index].rotation - 22.5,
-                          }
-                          return next
-                        })
-                      }}
-                      className="w-7 aspect-square relative z-50 flex items-center justify-center transition-colors hover:bg-zinc-800 rounded-[4px]"
-                    >
-                      <RotateLeft size={20} />
-                    </button>
-                  </div>
+                      <div className="w-4 bg-black rotate-45 aspect-square rounded-sm absolute left-1/2 -translate-x-1/2 -bottom-1" />
+                      <button
+                        onClick={() => {
+                          setDragPosition((prev) => {
+                            const next = [...prev]
+                            next[index] = {
+                              ...next[index],
+                              rotation: next[index].rotation + 22.5,
+                            }
+                            return next
+                          })
+                        }}
+                        className="w-7 aspect-square relative z-50 flex items-center justify-center transition-colors hover:bg-zinc-800 rounded-[4px]"
+                      >
+                        <RotateRight size={20} />
+                      </button>
+                      <button
+                        onClick={() => {
+                          setDragPosition((prev) => {
+                            const next = [...prev]
+                            next[index] = {
+                              ...next[index],
+                              rotation: next[index].rotation - 22.5,
+                            }
+                            return next
+                          })
+                        }}
+                        className="w-7 aspect-square relative z-50 flex items-center justify-center transition-colors hover:bg-zinc-800 rounded-[4px]"
+                      >
+                        <RotateLeft size={20} />
+                      </button>
+                    </div>
+                  )}
                   <div
                     className="cursor-grab active:cursor-grabbing transition-all"
                     style={{
-                      zIndex: 1,
+                      zIndex: dragPosition[index]?.zIndex || 0,
                       transform: `rotate(${dragPosition[index]?.rotation}deg)`,
                     }}
                     dangerouslySetInnerHTML={{

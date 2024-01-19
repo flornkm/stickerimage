@@ -10,7 +10,7 @@ export default function Laptop(props: { className?: string }) {
       className={props.className}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1_4)">
+      <g clipPath="url(#clip0_1_4)">
         <path
           d="M291.848 0C296.35 0 300 3.61299 300 8.06984V199.93C300 204.387 296.35 208 291.848 208H8.15218C3.64986 208 0 204.387 0 199.93V8.06983C0 3.61298 3.64985 0 8.15217 0H291.848Z"
           fill="url(#paint0_linear_1_4)"
@@ -35,8 +35,8 @@ export default function Laptop(props: { className?: string }) {
           y2="208"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#CDCED3" />
-          <stop offset="1" stop-color="#595A5F" />
+          <stop stopColor="#CDCED3" />
+          <stop offset="1" stopColor="#595A5F" />
         </linearGradient>
         <clipPath id="clip0_1_4">
           <rect width="300" height="208" fill="white" />
