@@ -1,16 +1,12 @@
 import Buttons from "@/components/Buttons"
 import Confetti from "@/components/Confetti"
-import { ArrowLeft, Mail, Smiley } from "@/components/Icons"
+import { ArrowLeft, Smiley } from "@/components/Icons"
 import { app } from "@/lib/database"
 import { getStorage, ref, getDownloadURL } from "firebase/storage"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import { useEffect } from "react"
-import Dialog, { hideDialog, showDialog } from "@/components/Dialog"
-import { showNotification } from "@/components/Notification"
-import NewsletterForm from "@/components/NewsletterSubscribe"
 import NewsletterSubscribe from "@/components/NewsletterSubscribe"
 
 type Props = {
@@ -44,67 +40,65 @@ export default async function Page({ params, searchParams }: Props) {
   if (!stickerImage) return notFound()
 
   return (
-  
-      <main className="w-full min-h-screen flex flex-col items-center pt-16 px-4 overflow-x-hidden pb-16">
-        <div className="absolute pointer-events-none z-50 inset-0 flex items-start justify-center">
+    <main className="w-full min-h-screen flex flex-col items-center pt-16 px-4 overflow-x-hidden pb-16">
+      <div className="absolute pointer-events-none z-50 inset-0 flex items-start justify-center">
         {created && (
-        <NewsletterSubscribe
-          subscribe={async (email: string) => {
-            "use server"
+          <NewsletterSubscribe
+            subscribe={async (email: string) => {
+              "use server"
 
-            const response = await fetch(
-              process.env.NEWSLETTER_HOOK as string,
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  email: email,
-                }),
-              }
-            )
+              const response = await fetch(
+                process.env.NEWSLETTER_HOOK as string,
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    email: email,
+                  }),
+                }
+              )
 
-            return response.status
-          }}
-        />
-      )}
-          {created && <Confetti />}
-        </div>
-        <h1 className="text-xl font-semibold mb-12 max-w-sm">
-          Generated Memoji Laptop Sticker Image:
-        </h1>
-        <div className="p-4 rounded-3xl shadow-xl shadow-black/5 border border-zinc-200 bg-white -rotate-3 mb-16 animate-fall-in">
-          <Image
-            src={stickerImage}
-            width={400}
-            height={400}
-            priority
-            alt="Memoji Laptop Sticker"
-            className="rounded-xl"
+              return response.status
+            }}
           />
-          <div className="flex items-center justify-center pt-4">
-            <h3 className="text-xl font-semibold font-display">
-              ID: {params.id}
-            </h3>
-          </div>
+        )}
+        {created && <Confetti />}
+      </div>
+      <h1 className="text-xl font-semibold mb-12 max-w-sm">
+        Generated Memoji Laptop Sticker Image:
+      </h1>
+      <div className="p-4 rounded-3xl shadow-xl shadow-black/5 border border-zinc-200 bg-white -rotate-3 mb-16 animate-fall-in">
+        <Image
+          src={stickerImage}
+          width={400}
+          height={400}
+          priority
+          alt="Memoji Laptop Sticker"
+          className="rounded-xl"
+        />
+        <div className="flex items-center justify-center pt-4">
+          <h3 className="text-xl font-semibold font-display">
+            ID: {params.id}
+          </h3>
         </div>
-        <div className="flex items-center gap-4 md:w-auto w-full md:flex-row flex-col">
-          <Buttons image={await getImage(params.id)} />
-        </div>
-        <Link
-          href="/"
-          className="mt-16 font-medium hover:underline underline-offset-2 text-lg flex items-center"
-        >
-          {created ? (
-            <ArrowLeft size={20} className="inline-block mr-2" />
-          ) : (
-            <Smiley size={20} className="inline-block mr-2" />
-          )}
-          {created ? "Generate another" : "Create your own"}
-        </Link>
-      </main>
-    </>
+      </div>
+      <div className="flex items-center gap-4 md:w-auto w-full md:flex-row flex-col">
+        <Buttons image={await getImage(params.id)} />
+      </div>
+      <Link
+        href="/"
+        className="mt-16 font-medium hover:underline underline-offset-2 text-lg flex items-center"
+      >
+        {created ? (
+          <ArrowLeft size={20} className="inline-block mr-2" />
+        ) : (
+          <Smiley size={20} className="inline-block mr-2" />
+        )}
+        {created ? "Generate another" : "Create your own"}
+      </Link>
+    </main>
   )
 }
 
