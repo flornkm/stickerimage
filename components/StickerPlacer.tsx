@@ -284,7 +284,17 @@ export default function StickerPlacer() {
     }
   }
 
-  const saveImage = () => {
+  const saveImage = async () => {
+    const safari =
+      typeof window !== "undefined" &&
+      /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+
+    if (safari) {
+      await htmlToImage.toPng(screenRef.current as HTMLDivElement)
+      await htmlToImage.toPng(screenRef.current as HTMLDivElement)
+      await htmlToImage.toPng(screenRef.current as HTMLDivElement)
+    }
+
     htmlToImage
       .toPng(screenRef.current as HTMLDivElement)
       .then(function (dataUrl) {
