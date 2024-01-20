@@ -594,9 +594,9 @@ function Sticker({
           <div
             className={
               "tooltip absolute z-[60] bg-black text-white hidden md:group-hover:flex gap-0.5 p-0.5 rounded-md " +
-              (sticker.position.y < -230 && index < 6
+              (sticker.position.y < -230 && index < 5
                 ? "-bottom-8"
-                : sticker.position.y < -320 && index > 5 && index < 10
+                : sticker.position.y < -320 && index > 4 && index < 9
                 ? "-bottom-8"
                 : sticker.position.y < -50 && sticker.custom
                 ? "-bottom-8"
@@ -606,9 +606,9 @@ function Sticker({
             <div
               className={
                 "w-4 bg-black rotate-45 aspect-square rounded-sm absolute left-1/2 -translate-x-1/2 " +
-                (sticker.position.y < -230 && index < 6
+                (sticker.position.y < -230 && index < 5
                   ? "-top-1"
-                  : sticker.position.y < -320 && index > 5 && index < 10
+                  : sticker.position.y < -320 && index > 4 && index < 9
                   ? "-top-1"
                   : sticker.position.y < -50 && sticker.custom
                   ? "-top-1"
