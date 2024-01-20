@@ -67,6 +67,26 @@ const config: Config = {
             transform: "scale(1) rotate(-3deg)",
           },
         },
+        "scale-in": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.9)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+        "scale-out": {
+          "0%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+          "100%": {
+            opacity: "0",
+            transform: "scale(0.9)",
+          },
+        },
       },
       animation: {
         "fade-in-down": "fade-in-down 0.5s ease-out",
@@ -74,6 +94,8 @@ const config: Config = {
         "fade-out-down": "fade-out-down 0.5s ease-out",
         "fade-out-up": "fade-out-up 0.5s ease-out",
         "fall-in": "fall-in 1.5s ease-out",
+        "scale-in": "scale-in 0.3s ease-in-out",
+        "scale-out": "scale-out 0.3s ease-in-out",
       },
     },
   },

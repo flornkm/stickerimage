@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import { createRoot } from "react-dom/client"
+import { Information } from "./Icons"
 
 export default function Notification(props: {
   timer: number
@@ -29,7 +30,7 @@ export default function Notification(props: {
       }`}
     >
       {!hide && (
-        <div className="px-6 py-4 bg-white border border-zinc-200 rounded-xl pointer-events-auto">
+        <div className="px-6 py-4 bg-white border border-zinc-200 rounded-xl pointer-events-auto flex items-center gap-2">
           {props.children}
         </div>
       )}
@@ -47,6 +48,7 @@ export const showNotification = (message: string, timer: number = 5000) => {
 
   const notification = (
     <Notification timer={timer}>
+      <Information size={20} className="text-zinc-500 mr-2" />
       <p className="text-zinc-800">{message}</p>
     </Notification>
   )

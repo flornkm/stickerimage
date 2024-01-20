@@ -26,7 +26,7 @@ export default function Dialog(props: { children: React.ReactNode }) {
           }}
           className={
             "px-6 py-4 bg-white border border-zinc-300 rounded-2xl pointer-events-auto w-full max-w-lg max-h-[70vh] overflow-y-scroll min-h-64 " +
-            (animateIn ? "animate-fade-in-down" : "animate-fade-out-down")
+            (animateIn ? "animate-scale-in" : "animate-scale-out")
           }
         >
           {props.children}

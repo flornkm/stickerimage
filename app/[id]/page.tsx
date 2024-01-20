@@ -4,8 +4,15 @@ import { app } from "@/lib/database"
 import { getStorage, ref, getDownloadURL } from "firebase/storage"
 import Image from "next/image"
 import Link from "next/link"
+import { notFound } from "next/navigation"
 
 export default async function Page({ params }: { params: { id: string } }) {
+  const stickerImage = await getImage(params.id).catch(() => {
+    console.error("Image not found")
+  })
+
+  if (!stickerImage) return notFound()
+
   return (
     <main className="w-full h-screen flex flex-col items-center pt-16 px-4 overflow-x-hidden pb-16">
       <h1 className="text-xl font-semibold mb-12 max-w-sm">
@@ -13,7 +20,7 @@ export default async function Page({ params }: { params: { id: string } }) {
       </h1>
       <div className="p-4 rounded-3xl shadow-xl shadow-black/5 border border-zinc-200 bg-white -rotate-3 mb-16 animate-fall-in">
         <Image
-          src={await getImage(params.id)}
+          src={stickerImage}
           width={400}
           height={400}
           priority
