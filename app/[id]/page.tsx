@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export default async function Page({ params }: { params: { id: string } }) {
   return (
-    <main className="w-full h-screen flex flex-col items-center pt-16 px-4 overflow-x-hidden">
+    <main className="w-full h-screen flex flex-col items-center pt-16 px-4 overflow-x-hidden pb-16">
       <h1 className="text-xl font-semibold mb-12 max-w-sm">
         Your generated Memoji Laptop Sticker Image:
       </h1>
