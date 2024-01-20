@@ -62,7 +62,7 @@ export async function GET(
           style={{
             fontSize: 32,
             position: "absolute",
-            bottom: 40,
+            bottom: 72,
             left: 128,
             width: 300,
           }}
