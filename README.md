@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Sticker Image](./public/stickerimage-og.jpg)
 
-## Getting Started
+# Open Source Laptop Sticker Maker
 
-First, run the development server:
+Hi, this is Flo. This was a little project I shared on X, initially just as a design post. Many people wanted it, so I've built it. Hope you have fun using it. It took way longer than expected and I'm super exhausted the time I'm writing this.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+I would be incredibly happy if you share your custom stickers with me on Twitter [@flornkm](https://twitter.com/flornkm). It would also be great to get a Star here on GitHub.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack / Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [x] TypeScript
+- [x] NextJS App Router
+- [x] React Draggable
+- [x] Serverless Functions
+- [x] Dynamic Routing and OG Image Generation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+> [!NOTE]
+> Any misusage of the app is not my responsibility. I'm not liable for any damages caused by the app. Please use it responsibly.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you have questions, encounter a bug or want to report misuse, please open an issue here on GitHub or write me an email to [hello@floriankiem.com](mailto:hello@floriankiem.com).
