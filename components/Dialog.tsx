@@ -1,10 +1,14 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { createRoot } from "react-dom/client"
 
-export default function Dialog(props: { children: React.ReactNode }) {
-  const [visible, setVisible] = useState(true)
+export default function Dialog(props: {
+  timeout?: number
+  hide?: boolean
+  children: React.ReactNode
+}) {
+  const [visible, setVisible] = useState(false)
   const [animateIn, setAnimateIn] = useState(true)
 
   const hideDialog = () => {
@@ -13,6 +17,23 @@ export default function Dialog(props: { children: React.ReactNode }) {
       setVisible(false)
     }, 300)
   }
+
+  useEffect(() => {
+    if (props.timeout) {
+      setTimeout(() => {
+        setVisible(true)
+      }, props.timeout)
+    }
+  }, [props.timeout])
+
+  useEffect(() => {
+    if (props.hide) {
+      setAnimateIn(false)
+      setTimeout(() => {
+        setVisible(false)
+      }, 300)
+    }
+  }, [props.hide])
 
   return (
     visible && (

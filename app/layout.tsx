@@ -23,8 +23,8 @@ export default function RootLayout({
           {children}
           <SideInfo />
         </div>
-        <div className="md:block hidden">
-          <Pattern className="pointer-events-none absolute inset-0 opacity-50" />
+        <div className="md:block hidden fixed inset-0 pointer-events-none">
+          <Pattern className="absolute inset-0 opacity-50" />
           <div className="border-[256px] border-white inset-0 absolute blur-3xl" />
         </div>
       </body>

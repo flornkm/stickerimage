@@ -11,7 +11,7 @@ export default function SideInfo() {
   }
 
   return (
-    <div className="md:absolute bottom-0 px-4 py-8 md:max-w-[200px] w-full">
+    <div className="md:absolute bottom-0 px-4 pb-4 md:max-w-[200px] w-full">
       <h2 className="font-medium cursor-pointer" onClick={toggleInformation}>
         Information{" "}
         <ChevronDown

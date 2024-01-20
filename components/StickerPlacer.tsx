@@ -367,8 +367,8 @@ export default function StickerPlacer({
             src={memoji}
             priority
             alt="Memoji"
-            width={256}
-            height={256}
+            width={512}
+            height={512}
             className="absolute object-contain top-0 left-1/2 -translate-x-1/2 md:w-48 xs:w-44 w-[50vw] h-auto"
           />
         </div>
