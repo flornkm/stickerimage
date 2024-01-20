@@ -23,9 +23,12 @@ export async function GET(
           flexDirection: "column",
           textAlign: "left",
           padding: 40,
+          paddingTop: 64,
+          paddingLeft: 128,
+          paddingRight: 128,
         }}
       >
-        <h1 style={{ fontSize: 40 }}>My Laptop Sticker Image</h1>
+        <h1 style={{ fontSize: 40 }}>Laptop Sticker Image</h1>
         <p style={{ fontSize: 32, color: "#71717a" }}>
           <strong style={{ marginRight: 8 }}>ID:</strong>
           {req.params.id}
@@ -38,8 +41,8 @@ export async function GET(
             backgroundColor: "white",
             display: "flex",
             position: "absolute",
-            top: "50%",
-            right: 72,
+            top: "60%",
+            right: 128,
             transform: "rotate(-3deg) translateY(-50%)",
             marginLeft: "auto",
             boxShadow: "0 0 0 1px rgba(0,0,0,0.05)",
@@ -60,7 +63,8 @@ export async function GET(
             fontSize: 32,
             position: "absolute",
             bottom: 40,
-            left: 40,
+            left: 128,
+            width: 300,
           }}
         >
           Create your own at stickerimage.com

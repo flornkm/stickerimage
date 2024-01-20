@@ -4,6 +4,7 @@ import { getStorage, ref, uploadString } from "firebase/storage"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://stickerimage.com"),
   title: "Memoji Laptop Sticker Maker - StickerImage",
   description:
     "Make your own Laptop full of Stickers: Create your own Memoji Laptop Sticker image and share it with your friends.",

@@ -3,6 +3,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://stickerimage.com"),
   title: "Imprint - StickerImage",
   description: "Imprint for stickerimage.com",
   openGraph: {
