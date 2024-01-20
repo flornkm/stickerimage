@@ -7,8 +7,8 @@ import Link from "next/link"
 
 export default function Imprint() {
   return (
-    <main className="w-full h-screen flex items-start pt-[12vw] justify-center overflow-x-hidden px-4">
-      <div className="mx-auto max-w-sm pb-4">
+    <main className="w-full min-h-screen flex items-start pt-[12vw] justify-center overflow-x-hidden px-4">
+      <div className="mx-auto md:max-w-sm pb-4">
         <Link
           href="/"
           className="mb-6 font-medium hover:underline underline-offset-2 flex items-center"

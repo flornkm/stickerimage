@@ -1,11 +1,18 @@
 import StickerPlacer from "@/components/StickerPlacer"
-import Pattern from "@/illustrations/Pattern"
 import { app } from "@/lib/database"
 import { getStorage, ref, uploadString } from "firebase/storage"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title:
+    "Memoji Laptop Sticker Customizer | Make your own Memoji Profile Picture",
+  description:
+    "Make your own Memoji Laptop Sticker profile image with this tool.",
+}
 
 export default function Home() {
   return (
-    <main className="w-full h-screen flex items-start pt-[12vw] justify-center overflow-x-hidden">
+    <main className="w-full min-h-screen flex items-start pt-[12vw] justify-center overflow-x-hidden md:mb-0 mb-16">
       <div className="w-96 h-72 z-10 relative">
         <StickerPlacer
           uploadImage={async (dataUrl: string): Promise<string> => {

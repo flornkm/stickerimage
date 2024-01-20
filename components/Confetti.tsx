@@ -15,12 +15,5 @@ export default function Confetti() {
     })
   }, [])
 
-  return (
-    <canvas
-      ref={confettiAnimation}
-      width={window.innerWidth}
-      height={window.innerHeight}
-      className="absolute pointer-events-none z-50 inset-0"
-    />
-  )
+  return <canvas ref={confettiAnimation} width={1200} height={600} />
 }

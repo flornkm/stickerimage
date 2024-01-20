@@ -6,14 +6,31 @@ import { getStorage, ref, getDownloadURL } from "firebase/storage"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import type { Metadata, ResolvingMetadata } from "next"
 
-export default async function Page({
-  params,
-  searchParams,
-}: {
+type Props = {
   params: { id: string }
-  searchParams: { created: string | undefined }
-}) {
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const id = params.id
+
+  const image = await getImage(id).catch(() => {
+    console.error("Image not found")
+  })
+
+  return {
+    title: id + " | Memoji Laptop Sticker",
+    description: "Generated Memoji Laptop Sticker Image with id " + id,
+    metadataBase: new URL("https://stickerimage.vercel.app"),
+    openGraph: {
+      images: `/${id}/og/${encodeURIComponent(image as string)}`,
+    },
+  }
+}
+
+export default async function Page({ params, searchParams }: Props) {
   const created = searchParams.created
   const stickerImage = await getImage(params.id).catch(() => {
     console.error("Image not found")
@@ -22,8 +39,10 @@ export default async function Page({
   if (!stickerImage) return notFound()
 
   return (
-    <main className="w-full h-screen flex flex-col items-center pt-16 px-4 overflow-x-hidden pb-16">
-      {created && <Confetti />}
+    <main className="w-full min-h-screen flex flex-col items-center pt-16 px-4 overflow-x-hidden pb-16">
+      <div className="absolute pointer-events-none z-50 inset-0 flex items-start justify-center">
+        {created && <Confetti />}
+      </div>
       <h1 className="text-xl font-semibold mb-12 max-w-sm">
         Generated Memoji Laptop Sticker Image:
       </h1>
@@ -62,5 +81,5 @@ const getImage = async (id: string) => {
 
   const url = await getDownloadURL(storageRef)
 
-  return url
+  return url.toString()
 }

@@ -18,13 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + " bg-white"}>
+      <body className={inter.className + " bg-white overflow-x-hidden"}>
         <div className="relative z-10">
           {children}
           <SideInfo />
         </div>
         <div className="md:block hidden">
-          <Pattern className="pointer-events-none absolute inset-0" />
+          <Pattern className="pointer-events-none absolute inset-0 opacity-50" />
           <div className="border-[256px] border-white inset-0 absolute blur-3xl" />
         </div>
       </body>

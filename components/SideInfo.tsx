@@ -64,6 +64,15 @@ export default function SideInfo() {
           >
             Repo on GitHub
           </Link>
+          . <br /> <br />
+          The icons are from the beautiful{" "}
+          <Link
+            href="https://icons.saman.design"
+            target="_blank"
+            className="text-black font-medium underline underline-offset-2 hover:no-underline"
+          >
+            Saman Icons Pack
+          </Link>
           .
         </p>
         <h3 className="font-semibold mb-1">Credit</h3>
