@@ -32,6 +32,7 @@ export default function StickerPlacer({
   )
   const [draggedSticker, setDraggedSticker] = useState<number | null>(null)
   const [memoji, setMemoji] = useState<string>("/default-memoji.png")
+  const [loadImage, setLoadImage] = useState(false)
 
   const laptopRef = useRef<HTMLDivElement>(null)
   const toolbarRef = useRef<HTMLDivElement>(null)
@@ -289,6 +290,8 @@ export default function StickerPlacer({
   }
 
   const saveImage = async () => {
+    setLoadImage(true)
+
     const safari =
       typeof window !== "undefined" &&
       /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
@@ -446,9 +449,15 @@ export default function StickerPlacer({
             </button>
             <button
               onClick={saveImage}
-              className="h-10 truncate w-full gap-2 font-medium flex items-center justify-center bg-black text-white shadow-md shadow-black/5 transition-colors hover:bg-zinc-800 rounded-lg"
+              className="h-10 truncate overflow-hidden w-full gap-2 font-medium group flex items-center justify-center bg-black text-white shadow-md shadow-black/5 transition-colors hover:bg-zinc-800 rounded-lg"
             >
-              <Save size={20} className="md:block hidden" />
+              {loadImage ? (
+                <div className="w-6 h-6 border-2 border-white rounded-full animate-spin relative">
+                  <div className="w-2/3 h-2/3 absolute bg-black transition-colors group-hover:bg-zinc-800 z-10 -top-1 -left-1" />
+                </div>
+              ) : (
+                <Save size={20} className="md:block hidden" />
+              )}
               <span>Save Image</span>
             </button>
           </div>

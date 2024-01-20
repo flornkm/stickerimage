@@ -57,12 +57,23 @@ const config: Config = {
             transform: "translateY(-10px)",
           },
         },
+        "fall-in": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(1.5) rotate(10deg)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1) rotate(-3deg)",
+          },
+        },
       },
       animation: {
         "fade-in-down": "fade-in-down 0.5s ease-out",
         "fade-in-up": "fade-in-up 0.5s ease-out",
         "fade-out-down": "fade-out-down 0.5s ease-out",
         "fade-out-up": "fade-out-up 0.5s ease-out",
+        "fall-in": "fall-in 1.5s ease-out",
       },
     },
   },

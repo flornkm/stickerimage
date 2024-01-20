@@ -69,6 +69,46 @@ export function Save(props: { size?: number; className?: string }) {
   )
 }
 
+export function Copy(props: { size?: number; className?: string }) {
+  return (
+    <svg
+      width={props.size || 24}
+      height={props.size || 24}
+      className={props.className}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M8 3C8 2.44772 8.44772 2 9 2H15C15.5523 2 16 2.44772 16 3V4H17C18.6569 4 20 5.34315 20 7V19C20 20.6569 18.6569 22 17 22H7C5.34315 22 4 20.6569 4 19V7C4 5.34315 5.34315 4 7 4H8V3ZM8 6H7C6.44772 6 6 6.44772 6 7V19C6 19.5523 6.44772 20 7 20H17C17.5523 20 18 19.5523 18 19V7C18 6.44772 17.5523 6 17 6H16V7C16 7.55228 15.5523 8 15 8H9C8.44772 8 8 7.55228 8 7V6ZM14 4H10V6H14V4Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function X(props: { size?: number; className?: string }) {
+  return (
+    <svg
+      width={props.size || 24}
+      height={props.size || 24}
+      className={props.className}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M20.7071 4.70711C21.0976 4.31658 21.0976 3.68342 20.7071 3.29289C20.3165 2.90237 19.6834 2.90237 19.2928 3.29289L13.4135 9.17225L9.25513 3.41451C9.06712 3.1542 8.76555 3 8.44445 3H4C3.62447 3 3.2806 3.21039 3.10964 3.54475C2.93868 3.8791 2.96946 4.28106 3.18932 4.58549L9.40038 13.1854L3.29289 19.2929C2.90237 19.6834 2.90237 20.3166 3.29289 20.7071C3.68342 21.0976 4.31658 21.0976 4.70711 20.7071L10.5865 14.8277L14.7449 20.5855C14.9329 20.8458 15.2345 21 15.5556 21H20C20.3755 21 20.7194 20.7896 20.8904 20.4553C21.0613 20.1209 21.0306 19.7189 20.8107 19.4145L14.5996 10.8146L20.7071 4.70711ZM5.95576 5L16.0669 19H18.0442L7.93314 5H5.95576Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
 export function File(props: { size?: number; className?: string }) {
   return (
     <svg
