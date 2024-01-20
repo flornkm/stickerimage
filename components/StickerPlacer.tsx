@@ -338,12 +338,12 @@ export default function StickerPlacer() {
             alt="Memoji"
             width={256}
             height={256}
-            className="absolute object-contain top-0 left-1/2 -translate-x-1/2 md:w-48 xs:w-40 w-32 h-auto"
+            className="absolute object-contain top-0 left-1/2 -translate-x-1/2 md:w-48 xs:w-44 w-[50vw] h-auto"
           />
         </div>
       </div>
       <div
-        className="md:absolute fixed left-1/2 -translate-x-1/2 bottom-4 md:bottom-0 md:translate-y-[332px] z-10 w-auto"
+        className="absolute left-1/2 -translate-x-1/2 xs:-bottom-[400px] -bottom-[450px] md:bottom-0 md:translate-y-[332px] z-10 w-auto"
         ref={toolbarRef}
       >
         <div className="bg-white border-t border-l border-zinc-200 rotate-45 absolute left-1/2 z-20 -translate-x-1/2 -top-3 rounded-tl-md w-6 aspect-square" />
@@ -397,13 +397,6 @@ export default function StickerPlacer() {
                       The background color of the Memoji will be used as the
                       background color of the screen.
                     </p>
-                    <NextImage
-                      src="/how-to-screenshot.jpg"
-                      alt="How to upload"
-                      width={1280}
-                      height={720}
-                      className="rounded-lg mb-6"
-                    />
                     <input
                       type="file"
                       accept=".png, .jpg, .jpeg"
@@ -417,11 +410,18 @@ export default function StickerPlacer() {
                     />
                     <label
                       htmlFor="memojiInput"
-                      className="h-10 w-full gap-2 font-medium flex items-center justify-center shadow-md shadow-black/5 transition-colors bg-black rounded-lg cursor-pointer text-white hover:bg-zinc-800"
+                      className="h-10 mb-4 w-full gap-2 font-medium flex items-center justify-center shadow-md shadow-black/5 transition-colors bg-black rounded-lg cursor-pointer text-white hover:bg-zinc-800"
                     >
                       <File size={20} />
                       Choose File
                     </label>
+                    <NextImage
+                      src="/how-to-screenshot.jpg"
+                      alt="How to upload"
+                      width={1280}
+                      height={720}
+                      className="rounded-lg mb-6"
+                    />
                   </div>
                 )
               }
@@ -488,22 +488,59 @@ function Sticker({
   >
   stickerIsOnLaptop: (x: number, y: number) => boolean
 }) {
+  const rotateWithTwoFingers = (e: React.TouchEvent<HTMLDivElement>) => {
+    const firstTouch = e.touches[0]
+    const secondTouch = e.touches[1]
+
+    const firstTouchX = firstTouch.clientX
+    const firstTouchY = firstTouch.clientY
+    const secondTouchX = secondTouch.clientX
+    const secondTouchY = secondTouch.clientY
+
+    const x = firstTouchX - secondTouchX
+    const y = firstTouchY - secondTouchY
+
+    const angle = Math.atan2(y, x) * (180 / Math.PI)
+
+    setStickerState((prev) => {
+      const next = [...prev]
+      next[index] = {
+        ...next[index],
+        position: {
+          ...next[index].position,
+          rotation: angle,
+        },
+      }
+      return next
+    })
+  }
+
   return (
     <Draggable
       position={{
         x: sticker.position?.x || 0,
         y: sticker.position?.y || 0,
       }}
-      key={sticker.name}
       onStart={(e) => handleDragStart(e, index)}
       onStop={handleDragStop}
       disabled={draggedSticker !== null && draggedSticker !== index}
     >
       <div
-        onTouchStart={(e) => handleDragStart(e, index)}
+        onTouchStart={(e) => {
+          if (e.touches.length === 2) {
+            rotateWithTwoFingers(e)
+          }
+        }}
+        onTouchMove={(e) => {
+          if (e.touches.length === 2) {
+            rotateWithTwoFingers(e)
+          }
+        }}
         style={{
           zIndex: sticker.position?.zIndex || 0,
           touchAction: "none",
+          userSelect: "none",
+          pointerEvents: "auto",
         }}
         className={
           "cursor-grab pointer-events-auto active:cursor-grabbing flex items-center justify-center transition-opacity w-14 flex-shrink-0 aspect-square rounded-md relative group " +
@@ -519,7 +556,7 @@ function Sticker({
           sticker.custom) && (
           <div
             className={
-              "tooltip absolute bg-black text-white z-40 hidden group-hover:flex -top-8 gap-0.5 p-0.5 rounded-md"
+              "tooltip absolute z-[60] bg-black text-white hidden md:group-hover:flex -top-8 gap-0.5 p-0.5 rounded-md"
             }
           >
             <div className="w-4 bg-black rotate-45 aspect-square rounded-sm absolute left-1/2 -translate-x-1/2 -bottom-1" />
@@ -566,9 +603,9 @@ function Sticker({
           </div>
         )}
         <div
-          className="transition-all"
+          className="transition-all lg:pointer-events-auto pointer-events-none"
           style={{
-            zIndex: sticker.position?.zIndex || 0,
+            // zIndex: sticker.position?.zIndex || 0,
             transform: `rotate(${sticker.position?.rotation}deg)`,
           }}
           dangerouslySetInnerHTML={{
