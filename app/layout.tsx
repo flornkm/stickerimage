@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter, Zeyada } from "next/font/google"
 import "./globals.css"
 import Pattern from "@/illustrations/Pattern"
+import SideInfo from "@/components/SideInfo"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -18,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className + " bg-white"}>
-        <div className="relative z-10">{children}</div>
+        <div className="relative z-10">
+          {children}
+          <SideInfo />
+        </div>
         <div className="md:block hidden">
           <Pattern className="pointer-events-none absolute inset-0" />
           <div className="border-[256px] border-white inset-0 absolute blur-3xl" />
