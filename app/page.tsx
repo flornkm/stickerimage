@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Make your own Laptop full of Stickers: Create your own Memoji Laptop Sticker image and share it with your friends.",
   openGraph: {
-    images: "/stickerimage-og.png",
+    images: "/stickerimage-og.jpg",
   },
 }
 
