@@ -345,6 +345,7 @@ export default function StickerPlacer() {
           </div>
           <NextImage
             src={memoji}
+            priority
             alt="Memoji"
             width={256}
             height={256}
@@ -435,17 +436,17 @@ export default function StickerPlacer() {
                   </div>
                 )
               }
-              className="h-10 w-full gap-2 font-medium flex items-center justify-center border border-zinc-200 shadow-md shadow-black/5 transition-colors hover:bg-zinc-50 rounded-lg cursor-pointer"
+              className="h-10 truncate w-full gap-2 font-medium flex items-center justify-center border border-zinc-200 shadow-md shadow-black/5 transition-colors hover:bg-zinc-50 rounded-lg cursor-pointer"
             >
-              <Smiley size={20} />
-              Replace Memoji
+              <Smiley size={20} className="md:block hidden" />
+              <span>Replace Memoji</span>
             </button>
             <button
               onClick={saveImage}
-              className="h-10 w-full gap-2 font-medium flex items-center justify-center bg-black text-white shadow-md shadow-black/5 transition-colors hover:bg-zinc-800 rounded-lg"
+              className="h-10 truncate w-full gap-2 font-medium flex items-center justify-center bg-black text-white shadow-md shadow-black/5 transition-colors hover:bg-zinc-800 rounded-lg"
             >
-              <Save size={20} />
-              Save Image
+              <Save size={20} className="md:block hidden" />
+              <span>Save Image</span>
             </button>
           </div>
         </div>
@@ -566,10 +567,16 @@ function Sticker({
           sticker.custom) && (
           <div
             className={
-              "tooltip absolute z-[60] bg-black text-white hidden md:group-hover:flex -top-8 gap-0.5 p-0.5 rounded-md"
+              "tooltip absolute z-[60] bg-black text-white hidden md:group-hover:flex gap-0.5 p-0.5 rounded-md " +
+              (sticker.position?.y < -250 ? "-bottom-8" : "-top-8")
             }
           >
-            <div className="w-4 bg-black rotate-45 aspect-square rounded-sm absolute left-1/2 -translate-x-1/2 -bottom-1" />
+            <div
+              className={
+                "w-4 bg-black rotate-45 aspect-square rounded-sm absolute left-1/2 -translate-x-1/2 " +
+                (sticker.position?.y < -250 ? "-top-1" : "-bottom-1")
+              }
+            />
             <button
               onClick={() => {
                 setStickerState((prev) => {
