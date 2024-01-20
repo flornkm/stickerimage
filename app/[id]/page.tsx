@@ -44,8 +44,10 @@ export default async function Page({ params, searchParams }: Props) {
   if (!stickerImage) return notFound()
 
   return (
-    <>
-      {created && (
+  
+      <main className="w-full min-h-screen flex flex-col items-center pt-16 px-4 overflow-x-hidden pb-16">
+        <div className="absolute pointer-events-none z-50 inset-0 flex items-start justify-center">
+        {created && (
         <NewsletterSubscribe
           subscribe={async (email: string) => {
             "use server"
@@ -67,8 +69,6 @@ export default async function Page({ params, searchParams }: Props) {
           }}
         />
       )}
-      <main className="w-full min-h-screen flex flex-col items-center pt-16 px-4 overflow-x-hidden pb-16">
-        <div className="absolute pointer-events-none z-50 inset-0 flex items-start justify-center">
           {created && <Confetti />}
         </div>
         <h1 className="text-xl font-semibold mb-12 max-w-sm">
