@@ -25,7 +25,7 @@ export default function NewsletterSubscribe(props: {
         <ChevronDown
           size={24}
           className={
-            "text-black mb-1 transition-transform hidden md:inline-block " +
+            "text-black mb-1 transition-transform inline-block " +
             (isInformationOpen ? "transform rotate-180" : "")
           }
         />
@@ -34,19 +34,19 @@ export default function NewsletterSubscribe(props: {
         className={`${
           isInformationOpen
             ? "max-h-screen opacity-100 mb-16 my-2"
-            : "md:max-h-0 md:opacity-0 my-1"
+            : "max-h-0 md:opacity-0 my-1"
         } transition-all overflow-hidden`}
       >
         <p className="mb-4 text-zinc-500">
-          because I love stickers and I love Memoji. As you can see, this is
-          just a small side project I did in 48 hours.
+          Because I have a passion for stickers and Memoji. As you can see, this
+          is just a small side project I completed in 48 hours.
         </p>
         <p className="mb-6 text-zinc-500">
-          As I&apos;m planning to build more products, that are not only a side
-          project and fun, but also super useful, I would love to inform you
-          about them first. Feel free to subscribe to my personal waitlist. I
-          will never spam you and only inform you about new products as soon as
-          they come out. :)
+          As I plan to create more products that are not just side projects for
+          fun, but also incredibly useful, I would like to keep you informed
+          about them. Feel free to subscribe to my personal waitlist. I promise
+          not to spam you and will only notify you about new products as soon as
+          they are released. :)
         </p>
         <svg
           width="96"
@@ -78,6 +78,7 @@ export default function NewsletterSubscribe(props: {
               showNotification("Something went wrong. Please try again.")
             }
 
+            setEmail("")
             setLoading(false)
           }}
         >
