@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@rive-app/canvas": "^2.9.3",
+    "firebase": "^10.7.2",
     "html-to-image": "^1.11.11",
     "next": "14.0.4",
     "react": "^18",

@@ -18,7 +18,11 @@ import NextImage from "next/image"
 import * as htmlToImage from "html-to-image"
 import { hideDialog, showDialog } from "./Dialog"
 
-export default function StickerPlacer() {
+export default function StickerPlacer({
+  uploadImage,
+}: {
+  uploadImage: (dataUrl: string) => Promise<string>
+}) {
   const [stickerState, setStickerState] = useState(
     stickerData.map((sticker, index) => ({
       ...sticker,
@@ -297,11 +301,10 @@ export default function StickerPlacer() {
 
     htmlToImage
       .toPng(screenRef.current as HTMLDivElement)
-      .then(function (dataUrl) {
-        const link = document.createElement("a")
-        link.download = "memoji.png"
-        link.href = dataUrl
-        link.click()
+      .then(async function (dataUrl) {
+        uploadImage(dataUrl).then((id) => {
+          window.location.href = `/${id}`
+        })
       })
       .catch(function (error) {
         console.error("Error capturing the image:", error)
