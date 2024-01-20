@@ -51,7 +51,7 @@ export default async function Page({ params, searchParams }: Props) {
             "use server"
 
             const response = await fetch(
-              "https://hook.eu2.make.com/h5lq8vwghvuuhv0u3171s2hvud93byu1",
+              process.env.NEWSLETTER_HOOK as string,
               {
                 method: "POST",
                 headers: {
@@ -62,8 +62,6 @@ export default async function Page({ params, searchParams }: Props) {
                 }),
               }
             )
-
-            console.log(response.status)
 
             return response.status
           }}

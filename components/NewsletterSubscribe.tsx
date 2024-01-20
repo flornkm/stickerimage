@@ -53,9 +53,14 @@ export default function NewsletterSubscribe(props: {
           if (status === 200) {
             showNotification("Thanks for subscribing!")
             setHide(true)
+          } else if (status === 409) {
+            showNotification("You are already subscribed.")
+            setHide(true)
           } else {
             showNotification("Something went wrong. Please try again.")
           }
+
+          setLoading(false)
         }}
       >
         <label className="flex flex-col gap-2">
