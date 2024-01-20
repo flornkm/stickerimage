@@ -290,6 +290,19 @@ export default function StickerPlacer({
   }
 
   const saveImage = async () => {
+    if (
+      stickerState.every(
+        (sticker) =>
+          sticker.position.x === 0 &&
+          sticker.position.y === 0 &&
+          sticker.custom === false
+      ) &&
+      memoji === "/default-memoji.png"
+    )
+      return showNotification(
+        "Error: Please add at least one sticker to the laptop."
+      )
+
     setLoadImage(true)
 
     const safari =

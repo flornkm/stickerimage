@@ -5,8 +5,6 @@ import { Copy, Save, X } from "./Icons"
 import { showNotification } from "./Notification"
 
 export default function Buttons(props: { image: string }) {
-  // const [copied, setCopied] = useState(false)
-
   return (
     <>
       <button
@@ -14,6 +12,7 @@ export default function Buttons(props: { image: string }) {
           const a = document.createElement("a")
           a.href = props.image
           a.download = "memoji.png"
+          a.target = "_blank"
           a.click()
         }}
         className="h-10 truncate px-4 gap-2 md:w-auto w-full font-medium flex items-center justify-center bg-black text-white shadow-md shadow-black/5 transition-colors hover:bg-zinc-800 rounded-lg"
@@ -31,7 +30,7 @@ export default function Buttons(props: { image: string }) {
         className="h-10 truncate md:w-auto w-full px-4 gap-2 font-medium flex items-center justify-center border border-zinc-200 shadow-md shadow-black/5 transition-colors hover:bg-zinc-50 rounded-lg cursor-pointer"
       >
         <Copy size={20} className="md:block hidden" />
-        <span>Copy Link</span>
+        <span>Copy Sharable Link</span>
       </button>
       <button
         onClick={() => {

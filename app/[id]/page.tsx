@@ -1,17 +1,11 @@
 import Buttons from "@/components/Buttons"
+import { ArrowLeft } from "@/components/Icons"
 import { app } from "@/lib/database"
 import { getStorage, ref, getDownloadURL } from "firebase/storage"
 import Image from "next/image"
+import Link from "next/link"
 
 export default async function Page({ params }: { params: { id: string } }) {
-  const downloadImage = async () => {
-    const image = await getImage(params.id)
-
-    const a = document.createElement("a")
-    a.href = image
-    a.download = "memoji.png"
-  }
-
   return (
     <main className="w-full h-screen flex flex-col items-center pt-16 px-4 overflow-x-hidden">
       <h1 className="text-xl font-semibold mb-12 max-w-sm">
@@ -35,6 +29,13 @@ export default async function Page({ params }: { params: { id: string } }) {
       <div className="flex items-center gap-4 md:w-auto w-full md:flex-row flex-col">
         <Buttons image={await getImage(params.id)} />
       </div>
+      <Link
+        href="/"
+        className="mt-16 font-medium hover:underline underline-offset-2 text-lg flex items-center"
+      >
+        <ArrowLeft size={20} className="inline-block mr-3" />
+        Generate another
+      </Link>
     </main>
   )
 }
