@@ -69,7 +69,7 @@ export default function StickerPlacer({
         if (
           stickerRect.left >= laptop.left &&
           stickerRect.right <= laptop.right &&
-          stickerRect.top >= laptop.top + 20 &&
+          stickerRect.top >= laptop.top &&
           stickerRect.bottom <= laptop.bottom
         ) {
           setStickerState((prev) => {
@@ -590,8 +590,30 @@ function Sticker({
       >
         {(stickerIsOnLaptop(sticker.position.x || 0, sticker.position.y || 0) ||
           sticker.custom) && (
-          <div className="tooltip absolute z-[60] bg-black text-white hidden md:group-hover:flex gap-0.5 p-0.5 -top-8 rounded-md">
-            <div className="w-4 bg-black rotate-45 aspect-square rounded-sm absolute left-1/2 -bottom-1 -translate-x-1/2" />
+          <div
+            className={
+              "tooltip absolute z-[60] bg-black text-white hidden md:group-hover:flex gap-0.5 p-0.5 rounded-md " +
+              (sticker.position.y < -230 && index < 6
+                ? "-bottom-8"
+                : sticker.position.y < -320 && index > 5 && index < 10
+                ? "-bottom-8"
+                : sticker.position.y < -50 && sticker.custom
+                ? "-bottom-8"
+                : "-top-8")
+            }
+          >
+            <div
+              className={
+                "w-4 bg-black rotate-45 aspect-square rounded-sm absolute left-1/2 -translate-x-1/2 " +
+                (sticker.position.y < -230 && index < 6
+                  ? "-top-1"
+                  : sticker.position.y < -320 && index > 5 && index < 10
+                  ? "-top-1"
+                  : sticker.position.y < -50 && sticker.custom
+                  ? "-top-1"
+                  : "-bottom-1")
+              }
+            />
             <button
               onClick={() => {
                 setStickerState((prev) => {
