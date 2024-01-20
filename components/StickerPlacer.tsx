@@ -1,6 +1,6 @@
 "use client"
 
-import { SetStateAction, useEffect, useRef, useState } from "react"
+import { SetStateAction, useRef, useState } from "react"
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable"
 import stickerData from "@/public/sticker.json"
 import {
@@ -108,7 +108,8 @@ export default function StickerPlacer({
           dissolveAnimation.current!.style.top = stickerRect.top + "px"
 
           new rive.Rive({
-            src: "/dissolve.riv",
+            src: "/animations.riv",
+            artboard: "dissolve",
             canvas: dissolveAnimation.current as HTMLCanvasElement,
             autoplay: true,
           })
@@ -319,7 +320,7 @@ export default function StickerPlacer({
       .toPng(screenRef.current as HTMLDivElement)
       .then(async function (dataUrl) {
         uploadImage(dataUrl).then((id) => {
-          window.location.href = `/${id}`
+          window.location.href = `/${id}?created=true`
         })
       })
       .catch(function (error) {

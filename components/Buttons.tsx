@@ -23,7 +23,7 @@ export default function Buttons(props: { image: string }) {
       <button
         onClick={() => {
           const url = window.location.href
-          navigator.clipboard.writeText(url)
+          navigator.clipboard.writeText(url.replace(/\?.*$/, ""))
 
           showNotification("Copied link to clipboard!")
         }}
@@ -39,7 +39,10 @@ export default function Buttons(props: { image: string }) {
           const url = window.location.href
           const text =
             "Check out my new Memoji Laptop Profile Picture! 🎉 Made by @flornkm"
-          const twitterUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`
+          const twitterUrl = `https://twitter.com/intent/tweet?url=${url.replace(
+            /\?.*$/,
+            ""
+          )}&text=${text}`
 
           window.open(twitterUrl, "_blank")
         }}

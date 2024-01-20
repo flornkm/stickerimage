@@ -1,4 +1,5 @@
 import Buttons from "@/components/Buttons"
+import Confetti from "@/components/Confetti"
 import { ArrowLeft } from "@/components/Icons"
 import { app } from "@/lib/database"
 import { getStorage, ref, getDownloadURL } from "firebase/storage"
@@ -6,7 +7,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({
+  params,
+  searchParams,
+}: {
+  params: { id: string }
+  searchParams: { created: string | undefined }
+}) {
+  const created = searchParams.created
   const stickerImage = await getImage(params.id).catch(() => {
     console.error("Image not found")
   })
@@ -15,8 +23,9 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   return (
     <main className="w-full h-screen flex flex-col items-center pt-16 px-4 overflow-x-hidden pb-16">
+      {created && <Confetti />}
       <h1 className="text-xl font-semibold mb-12 max-w-sm">
-        Your generated Memoji Laptop Sticker Image:
+        Generated Memoji Laptop Sticker Image:
       </h1>
       <div className="p-4 rounded-3xl shadow-xl shadow-black/5 border border-zinc-200 bg-white -rotate-3 mb-16 animate-fall-in">
         <Image
