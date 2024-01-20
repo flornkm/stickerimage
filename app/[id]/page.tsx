@@ -1,12 +1,12 @@
 import Buttons from "@/components/Buttons"
 import Confetti from "@/components/Confetti"
-import { ArrowLeft } from "@/components/Icons"
+import { ArrowLeft, Smiley } from "@/components/Icons"
 import { app } from "@/lib/database"
 import { getStorage, ref, getDownloadURL } from "firebase/storage"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import type { Metadata, ResolvingMetadata } from "next"
+import type { Metadata } from "next"
 
 type Props = {
   params: { id: string }
@@ -21,9 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   })
 
   return {
-    title: id + " | Memoji Laptop Sticker",
+    title: id + " | Memoji Laptop Sticker - StickerImage",
     description: "Generated Memoji Laptop Sticker Image with id " + id,
-    metadataBase: new URL("https://stickerimage.vercel.app"),
+    metadataBase: new URL("https://stickerimage.com"),
     openGraph: {
       images: `/${id}/og/${encodeURIComponent(image as string)}`,
     },
@@ -68,8 +68,12 @@ export default async function Page({ params, searchParams }: Props) {
         href="/"
         className="mt-16 font-medium hover:underline underline-offset-2 text-lg flex items-center"
       >
-        <ArrowLeft size={20} className="inline-block mr-3" />
-        Generate another
+        {created ? (
+          <ArrowLeft size={20} className="inline-block mr-2" />
+        ) : (
+          <Smiley size={20} className="inline-block mr-2" />
+        )}
+        {created ? "Generate another" : "Create your own"}
       </Link>
     </main>
   )

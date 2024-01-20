@@ -1,9 +1,15 @@
 import { ArrowLeft } from "@/components/Icons"
-import StickerPlacer from "@/components/StickerPlacer"
-import Pattern from "@/illustrations/Pattern"
-import { app } from "@/lib/database"
-import { getStorage, ref, uploadString } from "firebase/storage"
+import { Metadata } from "next"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Imprint - StickerImage",
+  description: "Imprint for stickerimage.com",
+  openGraph: {
+    images: "/stickerimage-og.png",
+  },
+  robots: "noindex",
+}
 
 export default function Imprint() {
   return (

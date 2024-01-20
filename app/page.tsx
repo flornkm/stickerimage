@@ -4,10 +4,12 @@ import { getStorage, ref, uploadString } from "firebase/storage"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title:
-    "Memoji Laptop Sticker Customizer | Make your own Memoji Profile Picture",
+  title: "Memoji Laptop Sticker Maker - StickerImage",
   description:
-    "Make your own Memoji Laptop Sticker profile image with this tool.",
+    "Make your own Laptop full of Stickers: Create your own Memoji Laptop Sticker image and share it with your friends.",
+  openGraph: {
+    images: "/stickerimage-og.png",
+  },
 }
 
 export default function Home() {
