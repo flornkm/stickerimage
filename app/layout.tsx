@@ -3,6 +3,7 @@ import { Inter, Zeyada } from "next/font/google"
 import "./globals.css"
 import Pattern from "@/illustrations/Pattern"
 import SideInfo from "@/components/SideInfo"
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Pattern className="absolute inset-0 opacity-50" />
           <div className="border-[256px] border-white inset-0 absolute blur-3xl" />
         </div>
+        <Analytics />
       </body>
     </html>
   )
