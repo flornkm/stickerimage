@@ -21,7 +21,8 @@ export default function NewsletterSubscribe(props: {
         className="font-semibold text-lg mb-4 cursor-pointer w-full"
         onClick={toggleInformation}
       >
-        Hi, I&apos;m Flo. I&apos;ve built this tool… (open me){" "}
+        Hi, I&apos;m Flo. I&apos;ve built this tool… <br />
+        (open me){" "}
         <ChevronDown
           size={24}
           className={
