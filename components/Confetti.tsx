@@ -15,5 +15,9 @@ export default function Confetti() {
     })
   }, [])
 
-  return <canvas ref={confettiAnimation} width={1200} height={600} />
+  return (
+    <div className="max-w-[100vw] max-h-screen overflow-hidden">
+      <canvas ref={confettiAnimation} width={1200} height={600} />
+    </div>
+  )
 }
