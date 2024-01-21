@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <main className="w-full min-h-screen flex items-start pt-[12vw] justify-center overflow-x-hidden md:mb-0 mb-16">
       <Banner />
-      <div className="w-96 h-72 z-10 relative">
+      <div className="w-96 h-72 z-10 relative mt-8 md:mt-0">
         <StickerPlacer
           uploadImage={async (dataUrl: string): Promise<string> => {
             "use server"
