@@ -138,11 +138,14 @@ export default function StickerPlacer({
             return next
           })
 
+          console.log(stickerRect)
+
           dissolveAnimation.current!.style.left = stickerRect.left + "px"
           dissolveAnimation.current!.style.top = stickerRect.top + "px"
 
           new rive.Rive({
-            src: "/dissolve.riv",
+            src: "/animations.riv",
+            artboard: "dissolve",
             canvas: dissolveAnimation.current as HTMLCanvasElement,
             autoplay: true,
           })

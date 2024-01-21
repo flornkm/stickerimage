@@ -26,7 +26,7 @@ export default function SideInfo() {
         className={`text-sm ${
           isInformationOpen
             ? "max-h-screen opacity-100 my-2"
-            : "md:max-h-0 md:opacity-0 my-1"
+            : "md:max-h-0 md:opacity-0 my-2 md:my-1"
         } transition-all overflow-hidden`}
       >
         <p className="text-zinc-500 mb-6">
