@@ -192,80 +192,130 @@ export default function StickerPlacer({
     const file = event.target.files?.[0]
 
     if (file) {
-      if (file?.type !== "image/svg+xml") {
-        return showNotification(
-          "Error: Please upload a valid SVG file (max. 48 x 48 px)."
+      if (file?.type == "image/svg+xml") {
+        const reader = new FileReader()
+        reader.readAsText(file)
+
+        loadSvg(URL.createObjectURL(file)).then((svg) => {
+          if (svg.documentElement.firstChild?.nodeName === "?xml") {
+            svg.documentElement.removeChild(svg.documentElement.firstChild)
+          }
+
+          if (!svg.documentElement || svg.documentElement.tagName !== "svg") {
+            return showNotification(
+              "Error: Please upload a valid SVG file (max. 48 x 48 px)."
+            )
+          }
+
+          const image = svg.documentElement.querySelector("image")
+          if (image) {
+            image.removeAttribute("transform")
+          }
+
+          const svgProps = {
+            width: Number(
+              svg.documentElement.getAttribute("width")?.replace("px", "")
+            ),
+            height: Number(
+              svg.documentElement.getAttribute("height")?.replace("px", "")
+            ),
+          }
+
+          if (
+            svgProps.width > 48 ||
+            svgProps.height > 48 ||
+            !svgProps.width ||
+            !svgProps.height
+          ) {
+            svg.documentElement.setAttribute("width", "40")
+            svg.documentElement.setAttribute("height", "40")
+          }
+
+          if (
+            stickerState.find(
+              (sticker) =>
+                sticker.position.x === 0 &&
+                sticker.position.y === 0 &&
+                sticker.custom === true
+            )
+          )
+            return showNotification(
+              "Error: You need to move the existing custom sticker first."
+            )
+
+          const svgString = svg.documentElement.outerHTML
+
+          setStickerState((prev) => [
+            ...prev,
+            {
+              data: svgString,
+              name: file.name,
+              custom: true,
+              position: {
+                x: 0,
+                y: 0,
+                rotation: 0,
+                zIndex:
+                  Math.max(...prev.map((sticker) => sticker.position.zIndex)) +
+                  1,
+              },
+            },
+          ])
+        })
+      } else if (file?.type == "image/png" || file?.type == "image/jpeg") {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+
+        reader.onloadend = () => {
+          const img = new Image()
+
+          img.src = reader.result as string
+          img.onload = () => {
+            const canvas = document.createElement("canvas")
+            canvas.width = img.width
+            canvas.height = img.height
+
+            const context = canvas.getContext("2d")
+            context!.drawImage(img, 0, 0)
+
+            if (
+              stickerState.find(
+                (sticker) =>
+                  sticker.position.x === 0 &&
+                  sticker.position.y === 0 &&
+                  sticker.custom === true
+              )
+            )
+              return showNotification(
+                "Error: You need to move the existing custom sticker first."
+              )
+
+            const imgString = `<img style="pointer-events:none; user-select:none; width:100%; height:100%;" src="${reader.result}" width="100%" height="100%" />`
+
+            setStickerState((prev) => [
+              ...prev,
+              {
+                data: imgString,
+                name: file.name,
+                custom: true,
+                position: {
+                  x: 0,
+                  y: 0,
+                  rotation: 0,
+                  zIndex:
+                    Math.max(
+                      ...prev.map((sticker) => sticker.position.zIndex)
+                    ) + 1,
+                },
+              },
+            ])
+          }
+        }
+      } else {
+        showNotification(
+          "Error: Please upload a valid SVG, PNG or JPEG file (max. 48 x 48 px)."
         )
       }
-
-      const reader = new FileReader()
-      reader.readAsText(file)
-
-      loadSvg(URL.createObjectURL(file)).then((svg) => {
-        if (svg.documentElement.firstChild?.nodeName === "?xml") {
-          svg.documentElement.removeChild(svg.documentElement.firstChild)
-        }
-
-        if (!svg.documentElement || svg.documentElement.tagName !== "svg") {
-          return showNotification(
-            "Error: Please upload a valid SVG file (max. 48 x 48 px)."
-          )
-        }
-
-        const image = svg.documentElement.querySelector("image")
-        if (image) {
-          image.removeAttribute("transform")
-        }
-
-        const svgProps = {
-          width: Number(
-            svg.documentElement.getAttribute("width")?.replace("px", "")
-          ),
-          height: Number(
-            svg.documentElement.getAttribute("height")?.replace("px", "")
-          ),
-        }
-
-        if (
-          svgProps.width > 48 ||
-          svgProps.height > 48 ||
-          !svgProps.width ||
-          !svgProps.height
-        ) {
-          svg.documentElement.setAttribute("width", "40")
-          svg.documentElement.setAttribute("height", "40")
-        }
-
-        if (
-          stickerState.find(
-            (sticker) =>
-              sticker.position.x === 0 &&
-              sticker.position.y === 0 &&
-              sticker.custom === true
-          )
-        )
-          return showNotification(
-            "Error: You need to move the existing custom sticker first."
-          )
-
-        const svgString = svg.documentElement.outerHTML
-
-        setStickerState((prev) => [
-          ...prev,
-          {
-            data: svgString,
-            name: file.name,
-            custom: true,
-            position: {
-              x: 0,
-              y: 0,
-              rotation: 0,
-              zIndex:
-                Math.max(...prev.map((sticker) => sticker.position.zIndex)) + 1,
-            },
-          },
-        ])
-      })
     }
   }
 
@@ -430,7 +480,7 @@ export default function StickerPlacer({
             <div className="flex items-center justify-center group w-14 flex-shrink-0 aspect-square relative">
               <input
                 type="file"
-                accept=".svg"
+                accept=".svg, .png, .jpg, .jpeg"
                 onChange={handleStickerUpload}
                 id="fileInput"
                 className="absolute z-10 inset-0 opacity-0 cursor-pointer"
