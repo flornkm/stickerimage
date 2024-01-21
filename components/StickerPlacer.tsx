@@ -31,7 +31,7 @@ export default function StickerPlacer({
     }))
   )
   const [draggedSticker, setDraggedSticker] = useState<number | null>(null)
-  const [memoji, setMemoji] = useState<string>("/default-memoji.png")
+  const [memoji, setMemoji] = useState<string>("/images/default-memoji.png")
   const [loadImage, setLoadImage] = useState(false)
 
   const laptopRef = useRef<HTMLDivElement>(null)
@@ -412,7 +412,7 @@ export default function StickerPlacer({
   }
 
   return (
-    <div ref={screenRef}>
+    <div ref={screenRef} className="cursor-pointer">
       <div className="w-full h-full relative">
         <canvas
           className="fixed pointer-events-none"
@@ -452,7 +452,7 @@ export default function StickerPlacer({
             alt="Memoji"
             width={512}
             height={512}
-            className="absolute object-contain top-0 left-1/2 -translate-x-1/2 md:w-48 xs:w-44 w-[50vw] h-auto"
+            className="absolute object-contain top-0 left-1/2 -translate-x-1/2 md:w-48 xs:w-44 w-[50vw] h-auto select-none"
           />
         </div>
       </div>
@@ -467,6 +467,7 @@ export default function StickerPlacer({
               if (index < 9)
                 return (
                   <Sticker
+                    key={index}
                     sticker={sticker}
                     index={index}
                     handleDragStart={handleDragStart}
@@ -530,7 +531,7 @@ export default function StickerPlacer({
                       Choose File
                     </label>
                     <NextImage
-                      src="/how-to-screenshot.jpg"
+                      src="/images/how-to-screenshot.jpg"
                       alt="How to upload"
                       width={1280}
                       height={720}

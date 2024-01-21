@@ -1,4 +1,4 @@
-![Sticker Image](./public/stickerimage-og.jpg)
+![Sticker Image](public/images/stickerimage-og.jpg)
 
 # Open Source Laptop Sticker Maker
 
