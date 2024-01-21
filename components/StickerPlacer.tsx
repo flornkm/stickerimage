@@ -187,7 +187,14 @@ export default function StickerPlacer({
 
   const handleStickerUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
+
     if (file) {
+      if (file?.type !== "image/svg+xml") {
+        return showNotification(
+          "Error: Please upload a valid SVG file (max. 48 x 48 px)."
+        )
+      }
+
       const reader = new FileReader()
       reader.readAsText(file)
 
@@ -254,39 +261,43 @@ export default function StickerPlacer({
   ) => {
     const file = event.target.files?.[0]
     if (file) {
-      if (file.type === "image/png" || file.type === "image/jpeg") {
-        const img = new Image()
-
-        img.src = URL.createObjectURL(file)
-        img.onload = () => {
-          const canvas = document.createElement("canvas")
-          canvas.width = img.width
-          canvas.height = img.height
-
-          const context = canvas.getContext("2d")
-          context!.drawImage(img, 0, 0)
-
-          const data = context!.getImageData(0, 0, img.width, img.height)
-            .data as Uint8ClampedArray
-
-          const r = data[0]
-          const g = data[1]
-          const b = data[2]
-
-          const rgb = `rgb(${r}, ${g}, ${b})`
-
-          if (r === 0 && g === 0 && b === 0)
-            return (screenRef.current!.style.backgroundColor = "transparent")
-
-          screenRef.current!.style.backgroundColor = rgb
-        }
-
-        replaceMemoji(file)
-      } else {
-        showNotification(
+      if (file.type !== "image/png" && file.type !== "image/jpeg") {
+        return showNotification(
           "Error: Please upload a valid PNG or JPEG file for the memoji."
         )
       }
+
+      const img = new Image()
+
+      img.src = URL.createObjectURL(file)
+      img.onload = () => {
+        const canvas = document.createElement("canvas")
+        canvas.width = img.width
+        canvas.height = img.height
+
+        const context = canvas.getContext("2d")
+        context!.drawImage(img, 0, 0)
+
+        const data = context!.getImageData(0, 0, img.width, img.height)
+          .data as Uint8ClampedArray
+
+        const r = data[0]
+        const g = data[1]
+        const b = data[2]
+
+        const rgb = `rgb(${r}, ${g}, ${b})`
+
+        if (r === 0 && g === 0 && b === 0)
+          return (screenRef.current!.style.backgroundColor = "transparent")
+
+        screenRef.current!.style.backgroundColor = rgb
+      }
+
+      replaceMemoji(file)
+    } else {
+      showNotification(
+        "Error: Please upload a valid PNG or JPEG file for the memoji."
+      )
     }
   }
 

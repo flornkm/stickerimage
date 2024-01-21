@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { Copy, Save, X } from "./Icons"
 import { showNotification } from "./Notification"
 
@@ -8,12 +7,19 @@ export default function Buttons(props: { image: string }) {
   return (
     <>
       <button
-        onClick={() => {
-          const a = document.createElement("a")
-          a.href = props.image
-          a.download = "memoji.png"
-          a.target = "_blank"
-          a.click()
+        onClick={async () => {
+          const response = await fetch(props.image)
+          const blob = await response.blob()
+
+          const url = window.URL.createObjectURL(blob)
+
+          const link = document.createElement("a")
+          link.href = url
+
+          link.download = "memoji-laptop.png"
+          link.click()
+
+          showNotification("Downloaded image!")
         }}
         className="h-10 truncate px-4 gap-2 md:w-auto w-full font-medium flex items-center justify-center bg-black text-white shadow-md shadow-black/5 transition-colors hover:bg-zinc-800 rounded-lg"
       >

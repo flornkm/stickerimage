@@ -7,7 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import NewsletterSubscribe from "@/components/NewsletterSubscribe"
+import NewsletterDialog from "@/components/NewsletterDialog"
 
 type Props = {
   params: { id: string }
@@ -63,7 +63,7 @@ export default async function Page({ params, searchParams }: Props) {
         </div>
       </div>
       {created ? (
-        <NewsletterSubscribe
+        <NewsletterDialog
           subscribe={async (email: string) => {
             "use server"
 
@@ -87,7 +87,7 @@ export default async function Page({ params, searchParams }: Props) {
         <></>
       )}
       <div className="flex items-center gap-4 md:w-auto w-full md:flex-row flex-col">
-        <Buttons image={await getImage(params.id)} />
+        <Buttons image={stickerImage} />
       </div>
       <Link
         href="/"
