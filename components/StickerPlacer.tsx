@@ -202,10 +202,19 @@ export default function StickerPlacer({
       reader.readAsText(file)
 
       loadSvg(URL.createObjectURL(file)).then((svg) => {
+        if (svg.documentElement.firstChild?.nodeName === "?xml") {
+          svg.documentElement.removeChild(svg.documentElement.firstChild)
+        }
+
         if (!svg.documentElement || svg.documentElement.tagName !== "svg") {
           return showNotification(
             "Error: Please upload a valid SVG file (max. 48 x 48 px)."
           )
+        }
+
+        const image = svg.documentElement.querySelector("image")
+        if (image) {
+          image.removeAttribute("transform")
         }
 
         const svgProps = {
@@ -217,10 +226,14 @@ export default function StickerPlacer({
           ),
         }
 
-        if (svgProps.width > 48 || svgProps.height > 48) {
-          return showNotification(
-            "Error: SVG file dimensions should be 48 pixels or smaller."
-          )
+        if (
+          svgProps.width > 48 ||
+          svgProps.height > 48 ||
+          !svgProps.width ||
+          !svgProps.height
+        ) {
+          svg.documentElement.setAttribute("width", "40")
+          svg.documentElement.setAttribute("height", "40")
         }
 
         if (
