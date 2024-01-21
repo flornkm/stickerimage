@@ -199,6 +199,12 @@ export default function StickerPlacer({
       reader.readAsText(file)
 
       loadSvg(URL.createObjectURL(file)).then((svg) => {
+        if (!svg.documentElement || svg.documentElement.tagName !== "svg") {
+          return showNotification(
+            "Error: Please upload a valid SVG file (max. 48 x 48 px)."
+          )
+        }
+
         const svgProps = {
           width: Number(
             svg.documentElement.getAttribute("width")?.replace("px", "")
