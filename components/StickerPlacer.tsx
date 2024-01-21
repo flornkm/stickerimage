@@ -412,7 +412,7 @@ export default function StickerPlacer({
   }
 
   return (
-    <div ref={screenRef} className="cursor-pointer">
+    <div ref={screenRef}>
       <div className="w-full h-full relative">
         <canvas
           className="fixed pointer-events-none"
@@ -423,7 +423,7 @@ export default function StickerPlacer({
           style={{ zIndex: 100, marginTop: "-20px", marginLeft: "-12px" }}
         ></canvas>
         <div className="w-full flex flex-col-reverse aspect-square">
-          <div ref={laptopRef} className="relative z-10">
+          <div ref={laptopRef} className="relative z-10 cursor-pointer">
             <Laptop className="w-full h-full bottom-0 flex-shrink-0" />
             {stickerState.length > 9 &&
               stickerState.map((sticker, index) => {
