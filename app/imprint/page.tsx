@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Imprint - StickerImage",
   description: "Imprint for stickerimage.com",
   openGraph: {
-    images: "/stickerimage-og.jpg",
+    images: "/images/stickerimage-og.jpg",
   },
   robots: "noindex",
 }

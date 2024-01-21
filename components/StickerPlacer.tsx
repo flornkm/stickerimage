@@ -31,7 +31,7 @@ export default function StickerPlacer({
     }))
   )
   const [draggedSticker, setDraggedSticker] = useState<number | null>(null)
-  const [memoji, setMemoji] = useState<string>("/default-memoji.png")
+  const [memoji, setMemoji] = useState<string>("/images/default-memoji.png")
   const [loadImage, setLoadImage] = useState(false)
 
   const laptopRef = useRef<HTMLDivElement>(null)
@@ -468,7 +468,7 @@ export default function StickerPlacer({
                       Choose File
                     </label>
                     <NextImage
-                      src="/how-to-screenshot.jpg"
+                      src="/images/how-to-screenshot.jpg"
                       alt="How to upload"
                       width={1280}
                       height={720}
