@@ -1,5 +1,7 @@
 import Link from "next/link"
 
+/* FOR TEMPORARY USAGE */
+
 export default function Banner() {
   return (
     <Link
