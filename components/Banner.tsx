@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Banner() {
   const previewDate = new Date("January 21, 2024 22:01:00")
-  const showDate = new Date("January 22, 2024 09:01:00")
+  const showDate = new Date("January 22, 2024 09:02:00")
   const currentDate = new Date()
 
   return currentDate > previewDate ? (
