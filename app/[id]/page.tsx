@@ -76,6 +76,7 @@ export default async function Page({ params, searchParams }: Props) {
                 },
                 body: JSON.stringify({
                   email: email,
+                  origin: "stickerimage",
                 }),
               }
             )
